@@ -25,12 +25,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, aagl, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        {
+          imports = [ aagl.nixosModules.default ];
+          nix.settings = aagl.nixConfig; # Set up Cachix
+          programs = {
+            anime-game-launcher.enable = true;
+            honkers-railway-launcher.enable = true;
+            sleepy-launcher.enable = true;
+          };
+        }
       ];
     };
   };

@@ -34,9 +34,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    inputs.aagl.packages.x86_64-linux.anime-game-launcher
-    inputs.aagl.packages.x86_64-linux.honkers-railway-launcher
-    inputs.aagl.packages.x86_64-linux.sleepy-launcher
     inputs.nvix.packages.x86_64-linux.default
   ];
 
