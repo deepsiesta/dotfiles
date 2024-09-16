@@ -8,6 +8,21 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    nvix = {
+      url = "github:niksingh710/nvix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    an-anime-game-launcher = {
+      url = "github:ezKEA/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

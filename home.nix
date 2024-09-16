@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -34,15 +34,21 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    inputs.an-anime-game-launcher.packages.x86_64-linux.anime-game-launcher
+    inputs.an-anime-game-launcher.packages.x86_64-linux.honkers-railway-launcher
+    inputs.an-anime-game-launcher.packages.x86_64-linux.sleepy-launcher
+    inputs.nvix.packages.x86_64-linux.default
   ];
 
-  programs.neovim.enable = true;
+  # programs.neovim.enable = true;
 
   programs.git = {
     enable = true;
     userName = "Siesta";
     userEmail = "20047950+deepsiesta@users.noreply.github.com";
   };
+
+  programs.btop.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
