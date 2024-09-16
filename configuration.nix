@@ -159,6 +159,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Game mode
+  programs.gamemode.enable = true;
+
   # Install Steam
   programs.steam = {
     enable = true;
