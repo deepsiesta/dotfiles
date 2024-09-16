@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    an-anime-game-launcher = {
+    aagl = {
       url = "github:ezKEA/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };

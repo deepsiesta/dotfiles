@@ -34,21 +34,29 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    inputs.an-anime-game-launcher.packages.x86_64-linux.anime-game-launcher
-    inputs.an-anime-game-launcher.packages.x86_64-linux.honkers-railway-launcher
-    inputs.an-anime-game-launcher.packages.x86_64-linux.sleepy-launcher
+    inputs.aagl.packages.x86_64-linux.anime-game-launcher
+    inputs.aagl.packages.x86_64-linux.honkers-railway-launcher
+    inputs.aagl.packages.x86_64-linux.sleepy-launcher
     inputs.nvix.packages.x86_64-linux.default
   ];
 
   # programs.neovim.enable = true;
 
-  programs.git = {
-    enable = true;
-    userName = "Siesta";
-    userEmail = "20047950+deepsiesta@users.noreply.github.com";
+  programs = {
+    git = {
+      enable = true;
+      userName = "Siesta";
+      userEmail = "20047950+deepsiesta@users.noreply.github.com";
+    };
+    btop.enable = true;
+    kitty = {
+      enable = true;
+      font = {
+        name = "FiraCode Nerd Font";
+        size = 12;
+      };
+    };
   };
-
-  programs.btop.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

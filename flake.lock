@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "an-anime-game-launcher": {
+    "aagl": {
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
@@ -510,7 +510,7 @@
     },
     "root": {
       "inputs": {
-        "an-anime-game-launcher": "an-anime-game-launcher",
+        "aagl": "aagl",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nvix": "nvix"
