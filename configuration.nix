@@ -140,7 +140,6 @@
       discord
       mpv
       syncplay
-      # kitty
       lutris
       spotify
     ];
