@@ -54,6 +54,7 @@
       };
       settings = {
         shell = "fish";
+        background_opacity = "0.8";
         window_padding_width = 15;
       };
       shellIntegration.enableFishIntegration = true;
@@ -65,6 +66,33 @@
     ./hyprland.nix
     ./starship.nix
   ];
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "Noto Sans";
+      size = 12;
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

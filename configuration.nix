@@ -61,6 +61,7 @@
   };
   programs.hyprland.enable = true;
 
+
   # Enable the KDE Plasma Desktop Environment.
   # services.desktopManager.plasma6.enable = true;
 
@@ -142,7 +143,10 @@
     description = "Siesta";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
+      waybar
+      pavucontrol
+      wofi
+      qimgv
       discord
       mpv
       syncplay
@@ -174,6 +178,8 @@
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+
+  programs.thunar.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
