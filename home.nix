@@ -54,6 +54,7 @@
       };
       settings = {
         shell = "fish";
+        window_padding_width = 15;
       };
       shellIntegration.enableFishIntegration = true;
     };
