@@ -76,6 +76,7 @@
           " , XF86AudioNext, exec, playerctl next"
       ];
       exec-once = [
+        "swww-daemon --format xrgb"
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];

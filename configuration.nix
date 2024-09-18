@@ -206,6 +206,7 @@
     hyprpicker
     hyprshot
     wl-clipboard
+    swww
     kitty
   ];
 
