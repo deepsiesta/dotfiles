@@ -195,6 +195,9 @@
     pwvucontrol
     playerctl
     qimgv
+    hyprpicker
+    hyprshot
+    wl-clipboard
     kitty
   ];
 
