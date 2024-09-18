@@ -15,6 +15,21 @@
       "DP-3, 2560x1440@144, 0x0, 1"
       "DP-1, 2560x1440@144, 2560x0, 1"
       ];
+      general = {
+        gaps_in = 4;
+        gaps_out = 8;
+        gaps_workspaces = 50;
+        border_size = 1;
+        "col.active_border" = "0xFF30C0F0";
+        no_focus_fallback = true;
+        allow_tearing = true;
+      };
+      input = {
+        kb_layout = "us";
+        numlock_by_default = true;
+        follow_mouse = 2;
+      };
+      # Keybinds
       "$mod" = "Super";
       bind = [
         # Essentials
