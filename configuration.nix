@@ -168,6 +168,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable CUDA support
+  # nixpkgs.config.cudaSupport = true;
+
   # Game mode
   programs.gamemode.enable = true;
 
@@ -179,7 +182,10 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  # Thunar
   programs.thunar.enable = true;
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
