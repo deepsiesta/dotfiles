@@ -11,7 +11,7 @@
 
         modules-left = [ "hyprland/window" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "tray" "clock" ];
+        modules-right = [ "tray" "wireplumber" "clock" ];
 
         "hyprland/window" = {
           format = "{}";
@@ -35,9 +35,18 @@
           };
         };
 
-        "tray" ={
+        "tray" = {
           icon-size = 16;
           spacing = 10;
+        };
+
+        "wireplumber" = {
+          format = "{icon}";
+          tooltip-format = "{node_name}\n{volume}%";
+          format-muted = "";
+          on-click = "pwvucontrol";
+          scroll-step = 2;
+          format-icons = ["" "" "" ];
         };
 
         "clock" = {

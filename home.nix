@@ -56,6 +56,8 @@
         shell = "fish";
         background_opacity = "0.8";
         window_padding_width = 15;
+        enable_audio_bell = "no";
+        window_alert_on_bell = "no";
       };
       shellIntegration.enableFishIntegration = true;
     };

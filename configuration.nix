@@ -144,9 +144,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       waybar
-      pavucontrol
       wofi
-      qimgv
       discord
       mpv
       syncplay
@@ -194,6 +192,9 @@
     wget
     curl
     fastfetch
+    pwvucontrol
+    playerctl
+    qimgv
     kitty
   ];
 
