@@ -59,11 +59,17 @@
       };
       shellIntegration.enableFishIntegration = true;
     };
-    fish.enable = true;
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';      
+    };
    };
 
   imports = [
     ./hyprland.nix
+    ./waybar.nix
     ./starship.nix
   ];
 

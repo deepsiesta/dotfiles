@@ -27,6 +27,11 @@
         "$mod, Right, movefocus, r"
         "$mod, Up, movefocus, u"
         "$mod, Down, movefocus, d"
+        # Window arrangement
+        "$mod+Shift, Left, movewindow, l"
+        "$mod+Shift, Right, movewindow, r"
+        "$mod+Shift, Up, movewindow, u"
+        "$mod+Shift, Down, movewindow, d"
         # Toggle fullscreen
         "$mod, F, fullscreen, 0"
         # Toggle floating
@@ -35,7 +40,19 @@
         "$mod, Q, killactive"
         # Kill window clicked on (xkill equivalent)
         "$mod+Shift, Q, exec, hyprctl kill"
-      ];
+      ]
+      ++ (
+        # Workspace navigation
+        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+        builtins.concatLists (builtins.genList (i:
+            let ws = i + 1;
+            in [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod ALT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          )
+          9)
+      );
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
