@@ -85,13 +85,18 @@
     enable = true;
 
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
+      package = pkgs.tokyonight-gtk-theme;
+      name = "Tokyonight-Dark";
     };
 
     iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      name = "candy-icons";
+      # Merge Candy Icons and Sweet Folders into the same package
+      package = pkgs.candy-icons.overrideAttrs (oldAttrs: {
+        postInstall = ''
+          cp ${pkgs.sweet-folders}/share/icons/Sweet-Rainbow/Places/* $out/share/icons/candy-icons/places/48
+        '';
+      });
     };
 
     font = {
