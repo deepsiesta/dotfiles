@@ -61,6 +61,10 @@
   };
   programs.hyprland.enable = true;
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   # Enable the KDE Plasma Desktop Environment.
   # services.desktopManager.plasma6.enable = true;
