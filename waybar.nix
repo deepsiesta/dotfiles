@@ -51,7 +51,7 @@
 
         "clock" = {
           interval = 60;
-          format = "{:%a %d/%m %I:%M}";
+          format = "{:%a %d/%m %H:%M}";
         };
       };
     };
