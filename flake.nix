@@ -28,14 +28,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    nvix = {
-      url = "github:niksingh710/nvix";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim-dotfiles = {
+      url = "github:deepsiesta/nixvim-dotfiles";
+      flake = false;
     };
 
     aagl = {

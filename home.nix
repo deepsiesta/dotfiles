@@ -34,7 +34,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    inputs.nvix.packages.x86_64-linux.default
   ];
 
   # programs.neovim.enable = true;
@@ -73,6 +72,7 @@
     ./hyprland.nix
     ./waybar.nix
     ./starship.nix
+    "${inputs.nixvim-dotfiles}/nixvim.nix"
   ];
 
   home.pointerCursor = {
