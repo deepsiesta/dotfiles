@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }:
+{ ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -59,6 +59,8 @@
         "$mod, S, exec, hyprshot --freeze -m window -o \~\/Pictures\/Screenshots"
         # Screen capture (rectangle select)
         "$mod+Shift, S, exec, hyprshot --freeze -m region -o \~\/Pictures\/Screenshots"
+        # Screen lock
+        "$mod, L, exec, pidof hyprlock || hyprlock"
       ]
       ++ (
         # Workspace navigation
@@ -94,7 +96,32 @@
         "swww-daemon --format xrgb"
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
+        "steam -silent"
       ];
+    };
+  };
+
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      background.color = "rgb(0, 0, 0)";
+      input-field = [
+              {
+                monitor = "";
+                size = "250, 60";
+                outline_thickness = 2;
+                dots_size = 0.2;
+                dots_spacing = 0.2;
+                dots_center = true;
+                outer_color = "rgba(255, 255, 255, 0.8)";
+                inner_color = "rgb(0, 0, 0)";
+                font_color = "rgb(200, 200, 200)";
+                fade_on_empty = false;
+                position = "0, -120";
+                halign = "center";
+                valign = "center";
+              }
+            ];
     };
   };
 }

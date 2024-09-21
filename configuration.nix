@@ -60,6 +60,10 @@
     wayland.enable = true;
   };
   programs.hyprland.enable = true;
+  security = {
+    polkit.enable = true;
+    pam.services.hyprlock = {};
+  };
 
   xdg.portal = {
     enable = true;
