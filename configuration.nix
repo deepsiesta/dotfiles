@@ -166,6 +166,7 @@
       syncplay
       lutris
       spotify
+      qbittorrent
     ];
   };
 
