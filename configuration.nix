@@ -161,6 +161,7 @@
     packages = with pkgs; [
       waybar
       wofi
+      btop
       discord
       mpv
       syncplay
@@ -184,7 +185,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable CUDA support
-  # nixpkgs.config.cudaSupport = true;
+  # Temp fix for OpenCV
+  nixpkgs.overlays = [ (final: prev: { cudaPackages = prev.cudaPackages_12_3; })];
+  nixpkgs.config.cudaSupport = true;
 
   # Game mode
   programs.gamemode.enable = true;

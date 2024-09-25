@@ -44,7 +44,7 @@
       userName = "Siesta";
       userEmail = "20047950+deepsiesta@users.noreply.github.com";
     };
-    btop.enable = true;
+    # btop.enable = true;
     kitty = {
       enable = true;
       font = {
