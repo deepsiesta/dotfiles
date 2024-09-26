@@ -35,6 +35,28 @@
           "specialWorkspace, 1, 3, default, slidefadevert -80%"
         ];
       };
+      dwindle = {
+        preserve_split = true;
+        smart_split = false;
+        smart_resizing = false;
+        special_scale_factor = 0.95;
+      };
+      workspace = [
+        "special, name:scratchpad, on-created-empty:kitty, monitor:DP-1"
+      ]
+      ++ (
+        # Bind odd workspaces to left screen, even workspaces to right screen
+        builtins.concatLists (builtins.genList (i:
+            let 
+              wleft = 2 * i + 1;
+              wright = 2 * i + 2;
+            in [
+              "${toString wleft}, monitor:DP-3"
+              "${toString wright}, monitor:DP-1"
+            ]
+          )
+          5) # Applies rules to workspaces 1 .. 10
+      );
       # Keybinds
       "$mod" = "Super";
       bind = [
@@ -58,7 +80,7 @@
         # Toggle floating
         "$mod+Alt, Space, togglefloating,"
         # Special workspace
-        "$mod, grave, togglespecialworkspace"
+        "$mod, grave, togglespecialworkspace, scratchpad"
         # Kill active window
         "$mod, Q, killactive"
         # Kill window clicked on (xkill equivalent)
@@ -80,7 +102,7 @@
               "$mod ALT, code:1${toString i}, movetoworkspace, ${toString ws}"
             ]
           )
-          9)
+          10)
       );
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -105,7 +127,7 @@
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "steam -silent"
-        "[workspace special silent] kitty"
+        # "[workspace special silent] kitty"
       ];
     };
   };
