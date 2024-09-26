@@ -29,6 +29,12 @@
         numlock_by_default = true;
         follow_mouse = 2;
       };
+      animations = {
+        enabled = true;
+       animation = [
+          "specialWorkspace, 1, 3, default, slidefadevert -80%"
+        ];
+      };
       # Keybinds
       "$mod" = "Super";
       bind = [
@@ -51,6 +57,8 @@
         "$mod, F, fullscreen, 0"
         # Toggle floating
         "$mod+Alt, Space, togglefloating,"
+        # Special workspace
+        "$mod, grave, togglespecialworkspace"
         # Kill active window
         "$mod, Q, killactive"
         # Kill window clicked on (xkill equivalent)
@@ -97,6 +105,7 @@
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "steam -silent"
+        "[workspace special silent] kitty"
       ];
     };
   };
