@@ -42,7 +42,7 @@
         special_scale_factor = 0.95;
       };
       workspace = [
-        "special, name:scratchpad, on-created-empty:kitty, monitor:DP-1"
+        "special:scratchpad, name:scratchpad, monitor:DP-1"
       ]
       ++ (
         # Bind odd workspaces to left screen, even workspaces to right screen
@@ -127,7 +127,7 @@
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "steam -silent"
-        # "[workspace special silent] kitty"
+        "[workspace special silent] kitty"
       ];
     };
   };
