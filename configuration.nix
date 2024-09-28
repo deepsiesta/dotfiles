@@ -185,8 +185,6 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable CUDA support
-  # Temp fix for OpenCV
-  nixpkgs.overlays = [ (final: prev: { cudaPackages = prev.cudaPackages_12_2; })];
   nixpkgs.config.cudaSupport = true;
 
   # Game mode
