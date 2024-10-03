@@ -166,8 +166,10 @@
       mpv
       syncplay
       lutris
+      heroic
       spotify
       qbittorrent
+      (ollama.override { acceleration = "cuda"; })
     ];
   };
 
