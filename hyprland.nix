@@ -127,7 +127,8 @@
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "steam -silent"
-        "[workspace special silent] kitty"
+        "discord"
+        "[workspace special:scratchpad silent] kitty"
       ];
     };
   };

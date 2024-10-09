@@ -220,6 +220,7 @@
     wl-clipboard
     swww
     kitty
+    ranger
   ];
 
   # Fonts
