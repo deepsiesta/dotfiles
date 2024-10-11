@@ -1,6 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "siesta";
@@ -65,9 +69,17 @@
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish | source
-      '';      
+      '';
     };
-   };
+    ranger = {
+      enable = true;
+      settings = {
+        column_ratios = "1,3,3";
+        preview_images = true;
+        preview_images_method = "kitty";
+      };
+    };
+  };
 
   imports = [
     ./hyprland.nix

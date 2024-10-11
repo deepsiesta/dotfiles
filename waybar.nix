@@ -1,5 +1,8 @@
-{config, pkgs, ...}:
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -9,9 +12,9 @@
         height = 32;
         # output = [ "DP-1" ];
 
-        modules-left = [ "hyprland/window" ];
-        modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "tray" "wireplumber" "clock" ];
+        modules-left = ["hyprland/window"];
+        modules-center = ["hyprland/workspaces"];
+        modules-right = ["tray" "wireplumber" "clock"];
 
         "hyprland/window" = {
           format = "{}";
@@ -46,7 +49,7 @@
           format-muted = "";
           on-click = "pwvucontrol";
           scroll-step = 2;
-          format-icons = ["" "" "" ];
+          format-icons = ["" "" ""];
         };
 
         "clock" = {

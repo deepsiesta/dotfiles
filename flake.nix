@@ -4,7 +4,7 @@
   nixConfig = {
     # override the default substituters
     substituters = [
-       "https://cache.nixos.org"
+      "https://cache.nixos.org"
       # nix community's cache server
       "https://nix-community.cachix.org"
       # CUDA maintainers cache
@@ -18,7 +18,7 @@
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
     ];
-  };  
+  };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -44,7 +44,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
