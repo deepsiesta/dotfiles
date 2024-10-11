@@ -84,6 +84,7 @@
   imports = [
     ./hyprland.nix
     ./waybar.nix
+    ./fuzzel.nix
     ./starship.nix
     "${inputs.nixvim-dotfiles}/nixvim.nix"
   ];

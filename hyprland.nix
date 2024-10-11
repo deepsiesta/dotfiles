@@ -118,7 +118,7 @@
         "$mod, mouse:273, resizewindow"
       ];
       bindr = [
-        "$mod, SUPER_L, exec, pkill wofi || wofi --show drun"
+        "$mod, SUPER_L, exec, pkill fuzzel || fuzzel"
       ];
       # Media control
       bindel = [
@@ -136,7 +136,7 @@
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "steam -silent"
-        "discord"
+        "discord --enable-features=UseOzonePlatform --ozone-platform=wayland --start-minimized"
         "[workspace special:scratchpad silent] kitty"
       ];
     };
