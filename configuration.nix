@@ -182,6 +182,7 @@
       spotify
       qbittorrent
       insync
+      okular
       (ollama.override {acceleration = "cuda";})
     ];
   };

@@ -272,11 +272,11 @@
     "nixvim-dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1728665034,
-        "narHash": "sha256-5SV7LhX1buILsW4QyTq2MTZeJxLZQSyJQB41uLps0Uk=",
+        "lastModified": 1728668846,
+        "narHash": "sha256-4Ba3kiNocnrotUCN8rwHz/k6HlSdxBpB6mbwvG7Ofng=",
         "owner": "deepsiesta",
         "repo": "nixvim-dotfiles",
-        "rev": "fab834cae1cb9c180c0a3ec7f254978e78c800db",
+        "rev": "38ff41ebb54866d1155aa20075ee8c6b2d6e5a54",
         "type": "github"
       },
       "original": {
