@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -20,14 +20,14 @@
         gaps_out = 8;
         gaps_workspaces = 50;
         border_size = 1;
-        "col.active_border" = "$col_active";
+        "col.active_border" = lib.mkForce "$col_active";
         no_focus_fallback = true;
         allow_tearing = true;
       };
       decoration = {
         shadow_range = 5;
         shadow_render_power = 3;
-        "col.shadow" = "$col_active";
+        "col.shadow" = lib.mkForce "$col_active";
         "col.shadow_inactive" = false;
       };
       input = {
