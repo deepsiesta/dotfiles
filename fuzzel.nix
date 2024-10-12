@@ -7,13 +7,13 @@
         width = 30;
         vertical-pad = 12;
         line-height = 28;
-        font = "Noto Sans:size=12";
+        # font = "Noto Sans:size=12";
       };
-      colors = {
-        background = "000000cc";
-        text = "ffffffff";
-        selection = "121212dd";
-      };
+      # colors = {
+      #   background = "000000cc";
+      #   text = "ffffffff";
+      #   selection = "121212dd";
+      # };
     };
   };
 }
