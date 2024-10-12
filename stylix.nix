@@ -12,6 +12,12 @@
     };
 
     fonts = {
+      sizes = {
+        applications = 12;
+        desktop = 12;
+        popups = 12;
+      };
+
       serif = {
         package = pkgs.noto-fonts;
         name = "Noto Serif";
@@ -36,6 +42,11 @@
       size = 24;
     };
 
-    opacity.terminal = 0.8;
+    opacity = {
+      applications = 0.9;
+      desktop = 0.8;
+      popups = 0.9;
+      terminal = 0.8;
+    };
   };
 }

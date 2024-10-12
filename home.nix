@@ -123,7 +123,7 @@
 
   qt = {
     enable = true;
-    style.name = "adwaita-dark";
+    # style.name = "adwaita-dark";
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
