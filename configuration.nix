@@ -180,6 +180,7 @@
       discord
       mpv
       syncplay
+      gimp
       (lutris.override {extraPkgs = pkgs: [winetricks];})
       heroic
       spotify
