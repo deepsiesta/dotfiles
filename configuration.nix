@@ -53,6 +53,9 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
+  # Corsair keyboard etc. support
+  hardware.ckb-next.enable = true;
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   # services.xserver.enable = true;
@@ -177,7 +180,7 @@
       discord
       mpv
       syncplay
-      lutris
+      (lutris.override {extraPkgs = pkgs: [winetricks];})
       heroic
       spotify
       qbittorrent
