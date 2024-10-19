@@ -83,6 +83,7 @@
     ./waybar.nix
     ./fuzzel.nix
     ./starship.nix
+    ./tmux.nix
     "${inputs.nixvim-dotfiles}/nixvim.nix"
   ];
 

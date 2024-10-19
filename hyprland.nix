@@ -135,6 +135,7 @@
         "swww-daemon --format xrgb"
         "waybar &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
+        "ckb-next --background"
         "steam -silent"
         "discord --enable-features=UseOzonePlatform --ozone-platform=wayland --start-minimized"
         "[workspace special:scratchpad silent] kitty"
