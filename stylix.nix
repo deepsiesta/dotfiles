@@ -48,5 +48,14 @@
       popups = 0.9;
       terminal = 0.8;
     };
+
+    targets.nixvim = {
+      enable = false;
+      # plugin = "base16-nvim";
+      # transparentBackground = {
+      #   main = true;
+      #   signColumn = true;
+      # };
+    };
   };
 }

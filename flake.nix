@@ -38,12 +38,10 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixvim-dotfiles = {
-      url = "github:deepsiesta/nixvim-dotfiles";
-      flake = false;
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
     };
 
     aagl = {
@@ -56,6 +54,7 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        ./overlays/neovim.nix
         ./configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix

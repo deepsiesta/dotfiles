@@ -11,6 +11,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ./modules/neovim/nixvim.nix
     ./stylix.nix
   ];
 
@@ -250,7 +251,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
@@ -274,6 +275,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # # Fix nvim encoding issues
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
