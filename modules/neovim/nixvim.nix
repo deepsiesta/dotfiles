@@ -342,9 +342,10 @@
           end
         '';
       }
-      # Fix current line highlighting transparency
       {
-        event = "ColorScheme";
+        # event = "ColorScheme";
+        event = "VimEnter";
+        desc = "Remove cursor highlight background";
         command = "highlight CursorLine guibg=NONE";
       }
     ];
