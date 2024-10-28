@@ -58,6 +58,6 @@
         };
       };
     };
-    style = builtins.readFile ./dotfiles/waybar.css;
+    style = builtins.readFile ./waybar.css;
   };
 }

@@ -55,10 +55,10 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./overlays/neovim.nix
-        ./configuration.nix
+        ./config/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
-        ./aagl.nix
+        ./inputs/aagl.nix
       ];
     };
   };

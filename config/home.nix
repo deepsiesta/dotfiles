@@ -79,11 +79,11 @@
   };
 
   imports = [
-    ./hyprland.nix
-    ./waybar.nix
-    ./fuzzel.nix
-    ./starship.nix
-    ./tmux.nix
+    ../modules/hyprland/hyprland.nix
+    ../modules/hyprland/waybar.nix
+    ../modules/hyprland/fuzzel.nix
+    ../modules/starship/starship.nix
+    ../modules/tmux/tmux.nix
   ];
 
   gtk = {
