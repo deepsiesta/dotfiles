@@ -54,12 +54,21 @@
         size = 12;
       };
       settings = {
-        shell = "fish";
+        shell = "nu";
         window_padding_width = 15;
         enable_audio_bell = "no";
         window_alert_on_bell = "no";
       };
       shellIntegration.enableFishIntegration = true;
+    };
+    nushell.enable = true;
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableNushellIntegration = true;
     };
     fish = {
       enable = true;
