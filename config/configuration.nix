@@ -241,6 +241,7 @@
     kitty
     ranger
     tmux
+    tree
     fd
     # Virtualization
     dive # Look inside images
