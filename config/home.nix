@@ -61,7 +61,6 @@
       };
       shellIntegration.enableFishIntegration = true;
     };
-    nushell.enable = true;
     carapace = {
       enable = true;
       enableNushellIntegration = true;
@@ -93,6 +92,7 @@
     ../modules/hyprland/fuzzel.nix
     ../modules/starship/starship.nix
     ../modules/tmux/tmux.nix
+    ../modules/nushell/nushell.nix
   ];
 
   gtk = {

@@ -10,6 +10,7 @@
       alejandra
       prettierd
       ruff
+      # nufmt
     ];
 
     # Autoformat
@@ -37,6 +38,7 @@
           markdown = ["markdownlint"];
           javascript = ["prettierd"];
           latex = ["latexindent"];
+          # nu = ["nufmt"];
           # Conform can also run multiple formatters sequentially
           # python = [ "isort "black" ];
           #

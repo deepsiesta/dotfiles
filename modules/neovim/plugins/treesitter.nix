@@ -1,9 +1,17 @@
-{
+{pkgs, ...}: let
+  treesitter-nu-grammar = pkgs.tree-sitter-grammars.tree-sitter-nu;
+in {
   programs.nixvim = {
     # Highlight, edit, and navigate code
     # https://nix-community.github.io/nixvim/plugins/treesitter/index.html
     plugins.treesitter = {
       enable = true;
+
+      grammarPackages =
+        pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars
+        ++ [
+          treesitter-nu-grammar
+        ];
 
       # TODO: Don't think I need this as nixGrammars is true which should auto install these???
       settings = {
@@ -16,6 +24,7 @@
           "luadoc"
           "markdown"
           "markdown_inline"
+          "nushell"
           "query"
           "vim"
           "vimdoc"
@@ -43,5 +52,20 @@
         #    - Treesitter + textobjects: https://nix-community.github.io/nixvim/plugins/treesitter-textobjects/index.html
       };
     };
+    extraPlugins = [
+      treesitter-nu-grammar
+    ];
+    extraConfigLua = ''
+      do
+        local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+        parser_config.nu = {
+          install_info = {
+            url = "${treesitter-nu-grammar}",
+            files = {"src/parser.c"},
+          },
+          filetype = "nu",
+        }
+      end
+    '';
   };
 }
