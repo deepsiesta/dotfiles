@@ -15,10 +15,10 @@ let external_completer = {|spans|
 }
 
 $env.config = {
-  show_banner:false,
+  show_banner: false
   completions: {
     external: {
-      completer:$external_completer
+      completer: $external_completer
     }
   }
 }
