@@ -40,6 +40,14 @@
     # '')
   ];
 
+  home.file = {
+    ".local/share/thumbnailers/dds.thumbnailer".text = ''
+      [Thumbnailer Entry]
+      Exec=sh -c "${pkgs.imagemagick}/bin/convert -thumbnail x%s %i png:%o"
+      MimeType=image/x-dds;
+    '';
+  };
+
   programs = {
     git = {
       enable = true;
