@@ -101,6 +101,7 @@
     ../../modules/starship/starship.nix
     ../../modules/tmux/tmux.nix
     ../../modules/nushell/nushell.nix
+    ../../modules/fastfetch/fastfetch.nix
   ];
 
   gtk = {
@@ -138,13 +139,13 @@
   #wayland.windowManager.hyprland = {
   #  enable = true;
   #  settings = {
-    #      monitor = [
-    #        "DP-3, 2560x1440@144, 0x0, 1"
-    #        "DP-1, 2560x1440@144, 2560x0, 1"
-    #      ];
- #     workspace = ["special:scratchpad, name:scratchpad"];
- #   };
- # };
+  #      monitor = [
+  #        "DP-3, 2560x1440@144, 0x0, 1"
+  #        "DP-1, 2560x1440@144, 2560x0, 1"
+  #      ];
+  #     workspace = ["special:scratchpad, name:scratchpad"];
+  #   };
+  # };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

@@ -101,6 +101,7 @@
     ../../modules/starship/starship.nix
     ../../modules/tmux/tmux.nix
     ../../modules/nushell/nushell.nix
+    ../../modules/fastfetch/fastfetch.nix
   ];
 
   gtk = {

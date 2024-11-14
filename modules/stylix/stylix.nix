@@ -2,7 +2,7 @@
   stylix = {
     enable = true;
 
-    image = /home/siesta/Pictures/walls/current_wp.png;
+    image = /home/siesta/Pictures/system/current_wp.png;
 
     polarity = "dark";
 
