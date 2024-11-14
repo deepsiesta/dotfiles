@@ -61,5 +61,14 @@
         ./inputs/aagl.nix
       ];
     };
+    nixosConfigurations.satella = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./overlays/neovim.nix
+        ./hosts/satella/configuration.nix
+        inputs.home-manager.nixosModules.default
+        inputs.stylix.nixosModules.stylix
+      ];
+    };
   };
 }

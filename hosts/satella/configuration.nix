@@ -17,7 +17,7 @@
 
   # Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -26,7 +26,7 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  networking.hostName = "stargazer"; # Define your hostname.
+  networking.hostName = "satella"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -53,9 +53,6 @@
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
   };
-
-  # Corsair keyboard etc. support
-  hardware.ckb-next.enable = true;
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -86,21 +83,11 @@
   # Configure keymap in X11
   # services.xserver.xkb = {
   #   layout = "us";
-  #   variant = "";
+  #   variant = "altgr-intl";
   # };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  # Virtualization
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -127,43 +114,6 @@
         ];
       };
     };
-  };
-
-  ## Nvidia stuff
-
-  # Enable OpenGL
-  hardware.graphics.enable = true;
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of
-    # supported GPUs is at:
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
-    # Only available from driver 515.43.04+
-    open = true;
-
-    # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    # package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -194,6 +144,8 @@
   };
 
   home-manager = {
+    # Backup existing files
+    # backupFileExtension = "hm-backup";
     # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -205,9 +157,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Enable CUDA support
-  nixpkgs.config.cudaSupport = true;
 
   # Game mode
   programs.gamemode.enable = true;

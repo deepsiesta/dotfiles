@@ -125,6 +125,7 @@
       exec-once = [
         "swww-daemon --format xrgb"
         "waybar &"
+        "nm-applet --indicator &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "ckb-next --background"
         "steam -silent"
