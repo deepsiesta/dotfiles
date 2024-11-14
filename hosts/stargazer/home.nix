@@ -95,12 +95,12 @@
   };
 
   imports = [
-    ../modules/hyprland/hyprland.nix
-    ../modules/hyprland/waybar.nix
-    ../modules/hyprland/fuzzel.nix
-    ../modules/starship/starship.nix
-    ../modules/tmux/tmux.nix
-    ../modules/nushell/nushell.nix
+    ../../modules/hyprland/hyprland.nix
+    ../../modules/hyprland/waybar.nix
+    ../../modules/hyprland/fuzzel.nix
+    ../../modules/starship/starship.nix
+    ../../modules/tmux/tmux.nix
+    ../../modules/nushell/nushell.nix
   ];
 
   gtk = {
@@ -134,6 +134,32 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+  };
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      monitor = [
+        "DP-3, 2560x1440@144, 0x0, 1"
+        "DP-1, 2560x1440@144, 2560x0, 1"
+      ];
+      workspace =
+        [
+          "special:scratchpad, name:scratchpad, monitor:DP-1"
+        ]
+        ++ (
+          # Bind odd workspaces to left screen, even workspaces to right screen
+          builtins.concatLists (builtins.genList (
+              i: let
+                wleft = 2 * i + 1;
+                wright = 2 * i + 2;
+              in [
+                "${toString wleft}, monitor:DP-3"
+                "${toString wright}, monitor:DP-1"
+              ]
+            )
+            5) # Applies rules to workspaces 1 .. 10
+        );
+    };
   };
 
   # Home Manager can also manage your environment variables through

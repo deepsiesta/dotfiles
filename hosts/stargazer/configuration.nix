@@ -11,8 +11,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ../modules/neovim/nixvim.nix
-    ../modules/stylix/stylix.nix
+    ../../modules/neovim/nixvim.nix
+    ../../modules/stylix/stylix.nix
   ];
 
   # Kernel

@@ -11,10 +11,6 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       ];
-      monitor = [
-        "DP-3, 2560x1440@144, 0x0, 1"
-        "DP-1, 2560x1440@144, 2560x0, 1"
-      ];
       general = {
         gaps_in = 4;
         gaps_out = 8;
@@ -59,23 +55,6 @@
         smart_resizing = false;
         special_scale_factor = 0.95;
       };
-      workspace =
-        [
-          "special:scratchpad, name:scratchpad, monitor:DP-1"
-        ]
-        ++ (
-          # Bind odd workspaces to left screen, even workspaces to right screen
-          builtins.concatLists (builtins.genList (
-              i: let
-                wleft = 2 * i + 1;
-                wright = 2 * i + 2;
-              in [
-                "${toString wleft}, monitor:DP-3"
-                "${toString wright}, monitor:DP-1"
-              ]
-            )
-            5) # Applies rules to workspaces 1 .. 10
-        );
       # Keybinds
       "$mod" = "Super";
       bind =

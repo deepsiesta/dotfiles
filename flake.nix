@@ -51,11 +51,11 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.stargazer = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./overlays/neovim.nix
-        ./config/configuration.nix
+        ./hosts/stargazer/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
         ./inputs/aagl.nix
