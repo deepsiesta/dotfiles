@@ -77,6 +77,9 @@
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.hyprland.enableGnomeKeyring = true;
+
   # Enable the KDE Plasma Desktop Environment.
   # services.desktopManager.plasma6.enable = true;
 
