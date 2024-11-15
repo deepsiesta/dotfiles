@@ -95,13 +95,13 @@
   };
 
   imports = [
-    ../../modules/hyprland/hyprland.nix
-    ../../modules/hyprland/waybar.nix
-    ../../modules/hyprland/fuzzel.nix
-    ../../modules/starship/starship.nix
-    ../../modules/tmux/tmux.nix
-    ../../modules/nushell/nushell.nix
-    ../../modules/fastfetch/fastfetch.nix
+    ../../modules/home-manager/hyprland/hyprland.nix
+    ../../modules/home-manager/hyprland/waybar.nix
+    ../../modules/home-manager/hyprland/fuzzel.nix
+    ../../modules/home-manager/starship/starship.nix
+    ../../modules/home-manager/tmux/tmux.nix
+    ../../modules/home-manager/nushell/nushell.nix
+    ../../modules/home-manager/fastfetch/fastfetch.nix
   ];
 
   gtk = {
