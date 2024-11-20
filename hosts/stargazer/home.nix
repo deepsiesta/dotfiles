@@ -102,6 +102,7 @@
     ../../modules/home-manager/tmux/tmux.nix
     ../../modules/home-manager/nushell/nushell.nix
     ../../modules/home-manager/fastfetch/fastfetch.nix
+    ../../modules/home-manager/stylix/stylix.nix
   ];
 
   gtk = {
@@ -160,6 +161,10 @@
             )
             5) # Applies rules to workspaces 1 .. 10
         );
+      exec-once = [
+        "uwsm app -- ckb-next --background"
+        "uwsm app -- steam -silent"
+      ];
     };
   };
 

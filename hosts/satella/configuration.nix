@@ -63,6 +63,14 @@
     enable = true;
     wayland.enable = true;
   };
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors.hyprland = {
+      binPath = "/run/current-system/sw/bin/Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      prettyName = "Hyprland";
+    };
+  };
   programs.hyprland.enable = true;
   security = {
     polkit.enable = true;
@@ -142,7 +150,10 @@
       qbittorrent
       insync
       okular
-      (ollama.override {acceleration = "cuda";})
+      (ollama.override {acceleration = "rocm";})
+      emacs30-pgtk
+      fd
+      ripgrep
     ];
   };
 

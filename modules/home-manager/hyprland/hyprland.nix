@@ -1,6 +1,7 @@
 {lib, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
     settings = {
       "$col_active" = "0xFF30C0F0";
       env = [
@@ -21,10 +22,12 @@
         allow_tearing = true;
       };
       decoration = {
-        shadow_range = 5;
-        shadow_render_power = 3;
-        "col.shadow" = lib.mkForce "$col_active";
-        "col.shadow_inactive" = false;
+        shadow = {
+          range = 5;
+          render_power = 3;
+          color = lib.mkForce "$col_active";
+          color_inactive = false;
+        };
       };
       input = {
         kb_layout = "us";
@@ -60,10 +63,10 @@
       bind =
         [
           # Essentials
-          "$mod, T, exec, kitty"
+          "$mod, T, exec, uwsm app -- kitty"
           # "$mod, E, exec, dolphin --new-window"
-          "$mod, E, exec, thunar"
-          "$mod, W, exec, firefox"
+          "$mod, E, exec, uwsm app -- thunar"
+          "$mod, W, exec, uwsm app -- firefox"
           # Move focus
           "$mod, Left, movefocus, l"
           "$mod, Right, movefocus, r"
@@ -123,14 +126,12 @@
         " , XF86AudioNext, exec, playerctl next"
       ];
       exec-once = [
-        "swww-daemon --format xrgb"
-        "waybar &"
-        "nm-applet --indicator &"
+        "uwsm app -- swww-daemon --format xrgb"
+        "uwsm app -- waybar &"
+        "uwsm app -- nm-applet --indicator &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
-        "ckb-next --background"
-        "steam -silent"
-        "discord --enable-features=UseOzonePlatform --ozone-platform=wayland --start-minimized"
-        "[workspace special:scratchpad silent] kitty"
+        "uwsm app -- discord --enable-features=UseOzonePlatform --ozone-platform=wayland --start-minimized"
+        "[workspace special:scratchpad silent] uwsm app -- kitty"
       ];
     };
   };
