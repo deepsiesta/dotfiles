@@ -137,16 +137,14 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  #wayland.windowManager.hyprland = {
-  #  enable = true;
-  #  settings = {
-  #      monitor = [
-  #        "DP-3, 2560x1440@144, 0x0, 1"
-  #        "DP-1, 2560x1440@144, 2560x0, 1"
-  #      ];
-  #     workspace = ["special:scratchpad, name:scratchpad"];
-  #   };
-  # };
+  wayland.windowManager.hyprland = {
+    settings = {
+      bindel = [
+        " , XF86MonBrightnessUp, exec, light -A 10"
+        " , XF86MonBrightnessDown, exec, light -U 10"
+      ];
+    };
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

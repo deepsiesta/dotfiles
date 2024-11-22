@@ -184,7 +184,7 @@
   users.users.siesta = {
     isNormalUser = true;
     description = "Siesta";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "video" "wheel"];
     packages = with pkgs; [
       waybar
       networkmanagerapplet
