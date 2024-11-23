@@ -7,6 +7,7 @@
   nix.settings = inputs.aagl.nixConfig; # Set up Cachix
   programs = {
     anime-game-launcher.enable = true;
+    honkers-launcher.enable = true;
     honkers-railway-launcher.enable = true;
     sleepy-launcher.enable = true;
   };
