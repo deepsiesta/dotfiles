@@ -66,6 +66,7 @@
           "$mod, T, exec, uwsm app -- kitty"
           # "$mod, E, exec, dolphin --new-window"
           "$mod, E, exec, uwsm app -- thunar"
+          "$mod+Shift, E, exec, uwsm app -- emacsclient -c"
           "$mod, W, exec, uwsm app -- firefox"
           # Move focus
           "$mod, Left, movefocus, l"

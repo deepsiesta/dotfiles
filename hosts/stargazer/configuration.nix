@@ -93,6 +93,12 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
+  # Emacs daemon
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs30-pgtk;
+  };
+
   # Enable the KDE Plasma Desktop Environment.
   # services.desktopManager.plasma6.enable = true;
 

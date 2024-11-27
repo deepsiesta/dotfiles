@@ -92,6 +92,12 @@
 
   programs.light.enable = true;
 
+  # Emacs daemon
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs30-pgtk;
+  };
+
   # Enable the KDE Plasma Desktop Environment.
   # services.desktopManager.plasma6.enable = true;
 
