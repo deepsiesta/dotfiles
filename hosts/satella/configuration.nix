@@ -12,7 +12,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
-    ../../modules/nixos/stylix/stylix.nix
+    # ../../modules/nixos/stylix/stylix.nix
   ];
 
   # Kernel
@@ -227,12 +227,23 @@
   ];
 
   # Fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    (nerdfonts.override {fonts = ["FiraCode"];})
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      nerd-fonts.fira-code
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = ["Noto Serif"];
+        sansSerif = ["Noto Sans"];
+        monospace = ["FiraCode Nerd Font"];
+        emoji = ["Noto Color Emoji"];
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -253,7 +264,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # # Fix nvim encoding issues
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

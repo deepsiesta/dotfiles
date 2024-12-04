@@ -63,6 +63,7 @@
       };
       settings = {
         shell = "nu";
+        background_opacity = "0.8";
         window_padding_width = 15;
         enable_audio_bell = "no";
         window_alert_on_bell = "no";
@@ -102,11 +103,23 @@
     ../../modules/home-manager/tmux/tmux.nix
     ../../modules/home-manager/nushell/nushell.nix
     ../../modules/home-manager/fastfetch/fastfetch.nix
-    ../../modules/home-manager/stylix/stylix.nix
+    # ../../modules/home-manager/stylix/stylix.nix
   ];
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  };
 
   gtk = {
     enable = true;
+    theme = {
+      package = pkgs.tokyonight-gtk-theme;
+      name = "Tokyonight-Dark";
+    };
     iconTheme = {
       name = "candy-icons";
       # Merge Candy Icons and Sweet Folders into the same package
@@ -116,11 +129,15 @@
         '';
       });
     };
+    font = {
+      name = "Noto Sans";
+      size = 12;
+    };
   };
 
   qt = {
     enable = true;
-    # style.name = "adwaita-dark";
+    style.name = "adwaita-dark";
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
