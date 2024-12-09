@@ -78,6 +78,11 @@
       enable = true;
       enableNushellIntegration = true;
     };
+    direnv = {
+      enable = true;
+      enableNushellIntegration = true;
+      nix-direnv.enable = true;
+    };
     fish = {
       enable = true;
       interactiveShellInit = ''
