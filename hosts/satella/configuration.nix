@@ -158,7 +158,7 @@
       syncplay
       gimp
       (lutris.override {extraPkgs = pkgs: [winetricks];})
-      heroic
+      bottles
       spotify
       qbittorrent
       insync

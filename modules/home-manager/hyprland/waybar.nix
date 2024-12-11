@@ -52,6 +52,17 @@
           format-icons = ["" "" ""];
         };
 
+        "battery" = {
+          interval = 60;
+          states = {
+            warning = 30;
+            critical = 10;
+          };
+          format = "{capacity}% {icon}";
+          format-icons = ["" "" "" "" ""];
+          max-length = 25;
+        };
+
         "clock" = {
           interval = 60;
           format = "{:%a %d/%m %H:%M}";

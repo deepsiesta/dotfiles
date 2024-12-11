@@ -27,8 +27,8 @@ window#waybar {
   /* color: #ffffff; */
 }
 
-#workspaces button.active{
-  color : #FFA328;
+#workspaces button.active {
+  color: #FFA328;
 }
 
 #tray {
@@ -39,7 +39,10 @@ window#waybar {
   margin-right: 15px;
 }
 
-#clock {
+#battery {
   margin-right: 15px;
 }
 
+#clock {
+  margin-right: 15px;
+}
