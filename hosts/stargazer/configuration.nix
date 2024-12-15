@@ -215,6 +215,7 @@
       emacs30-pgtk
       fd
       ripgrep
+      tldr
     ];
   };
 
