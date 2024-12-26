@@ -95,6 +95,7 @@
     wl-clipboard
     swww
     kitty
+    inputs.ghostty.packages.x86_64-linux.default
     ranger
     tmux
     tree
