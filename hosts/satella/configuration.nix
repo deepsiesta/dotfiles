@@ -10,6 +10,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../modules/nixos/locale
+    ../../modules/nixos/sddm
+    ../../modules/nixos/hyprland
+    ../../modules/nixos/audio
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
     # ../../modules/nixos/stylix/stylix.nix
@@ -48,50 +52,9 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/Madrid";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "es_ES.UTF-8";
-    LC_IDENTIFICATION = "es_ES.UTF-8";
-    LC_MEASUREMENT = "es_ES.UTF-8";
-    LC_MONETARY = "es_ES.UTF-8";
-    LC_NAME = "es_ES.UTF-8";
-    LC_NUMERIC = "es_ES.UTF-8";
-    LC_PAPER = "es_ES.UTF-8";
-    LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "es_ES.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
-
-  # Enable SDDM and Hyprland
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors.hyprland = {
-      binPath = "/run/current-system/sw/bin/Hyprland";
-      comment = "Hyprland compositor managed by UWSM";
-      prettyName = "Hyprland";
-    };
-  };
-  programs.hyprland.enable = true;
   security = {
     polkit.enable = true;
     pam.services.hyprlock = {};
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   services.gnome.gnome-keyring.enable = true;
@@ -108,9 +71,6 @@
   # Enable the KDE Plasma Desktop Environment.
   # services.desktopManager.plasma6.enable = true;
 
-  # Tell Electron apps to use Wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   # Configure keymap in X11
   # services.xserver.xkb = {
   #   layout = "us";
@@ -120,32 +80,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-    pulse.enable = true;
-    #jack.enable = true;
-    wireplumber.extraConfig = {
-      # Fixes delay on audio start
-      disable-session-timeout = {
-        "monitor.alsa.rules" = [
-          {
-            matches = [
-              {"node.name" = "~alsa_input.*";}
-              {"node.name" = "~alsa_output.*";}
-            ];
-            actions.update-props."session.suspend-timeout-seconds" = 0;
-          }
-        ];
-      };
-    };
-  };
+  hardware.graphics.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
