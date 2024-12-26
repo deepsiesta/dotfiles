@@ -10,13 +10,12 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/nixos/locale
+    ../../modules/nixos/common
     ../../modules/nixos/sddm
     ../../modules/nixos/hyprland
     ../../modules/nixos/audio
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
-    # ../../modules/nixos/stylix/stylix.nix
   ];
 
   # Kernel
@@ -43,22 +42,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-
-  security = {
-    polkit.enable = true;
-    pam.services.hyprlock = {};
-  };
-
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
 
   programs.light.enable = true;
 
@@ -107,11 +90,6 @@
       "siesta" = import ./home.nix;
     };
   };
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Game mode
   programs.gamemode.enable = true;
@@ -148,10 +126,6 @@
     tmux
     tree
     fd
-    # Virtualization
-    dive # Look inside images
-    podman-tui
-    podman-compose
     # Gstreamer
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base

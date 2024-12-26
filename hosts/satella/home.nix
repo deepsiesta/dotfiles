@@ -108,7 +108,6 @@
     ../../modules/home-manager/tmux/tmux.nix
     ../../modules/home-manager/nushell/nushell.nix
     ../../modules/home-manager/fastfetch/fastfetch.nix
-    # ../../modules/home-manager/stylix/stylix.nix
   ];
 
   home.pointerCursor = {
