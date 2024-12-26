@@ -55,18 +55,9 @@
   # Corsair keyboard etc. support
   hardware.ckb-next.enable = true;
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
-
   security = {
     polkit.enable = true;
     pam.services.hyprlock = {};
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   services.gnome.gnome-keyring.enable = true;
@@ -77,18 +68,6 @@
     enable = true;
     package = pkgs.emacs30-pgtk;
   };
-
-  # Enable the KDE Plasma Desktop Environment.
-  # services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "";
-  # };
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Virtualization
   virtualisation = {
@@ -136,9 +115,6 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     # package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.siesta = {

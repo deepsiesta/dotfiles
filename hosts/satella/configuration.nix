@@ -68,22 +68,7 @@
     package = pkgs.emacs30-pgtk;
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  # services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "altgr-intl";
-  # };
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   hardware.graphics.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.siesta = {
