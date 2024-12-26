@@ -11,9 +11,10 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/nixos/common
+    ../../modules/nixos/audio
+    ../../modules/nixos/fonts
     ../../modules/nixos/sddm
     ../../modules/nixos/hyprland
-    ../../modules/nixos/audio
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
   ];
@@ -134,44 +135,6 @@
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
   ];
-
-  # Fonts
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      nerd-fonts.fira-code
-    ];
-    fontconfig = {
-      defaultFonts = {
-        serif = ["Noto Serif"];
-        sansSerif = ["Noto Sans"];
-        monospace = ["FiraCode Nerd Font"];
-        emoji = ["Noto Color Emoji"];
-      };
-    };
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
