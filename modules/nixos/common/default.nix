@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -37,4 +37,31 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.siesta = {
+    isNormalUser = true;
+    description = "Siesta";
+    extraGroups = ["networkmanager" "video" "wheel"];
+    packages = with pkgs; [
+      waybar
+      networkmanagerapplet
+      fuzzel
+      btop
+      discord
+      mpv
+      syncplay
+      gimp
+      (lutris.override {extraPkgs = pkgs: [winetricks];})
+      bottles
+      spotify
+      qbittorrent
+      insync
+      okular
+      emacs30-pgtk
+      fd
+      ripgrep
+      tldr
+    ];
+  };
 }

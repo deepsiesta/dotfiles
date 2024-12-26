@@ -94,34 +94,6 @@
   # Enable CUDA support
   nixpkgs.config.cudaSupport = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.siesta = {
-    isNormalUser = true;
-    description = "Siesta";
-    extraGroups = ["networkmanager" "video" "wheel"];
-    packages = with pkgs; [
-      waybar
-      networkmanagerapplet
-      fuzzel
-      btop
-      discord
-      mpv
-      syncplay
-      gimp
-      (lutris.override {extraPkgs = pkgs: [winetricks];})
-      bottles
-      spotify
-      qbittorrent
-      insync
-      okular
-      (ollama.override {acceleration = "cuda";})
-      emacs30-pgtk
-      fd
-      ripgrep
-      tldr
-    ];
-  };
-
   home-manager = {
     # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
@@ -165,6 +137,7 @@
     tmux
     tree
     fd
+    (ollama.override {acceleration = "cuda";})
     # Gstreamer
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
