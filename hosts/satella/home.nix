@@ -19,10 +19,10 @@
     ../../modules/home-manager/waybar
     ../../modules/home-manager/fuzzel
     ../../modules/home-manager/ghostty
-    ../../modules/home-manager/starship/starship.nix
-    ../../modules/home-manager/tmux/tmux.nix
-    ../../modules/home-manager/nushell/nushell.nix
-    ../../modules/home-manager/fastfetch/fastfetch.nix
+    ../../modules/home-manager/starship
+    ../../modules/home-manager/tmux
+    ../../modules/home-manager/nushell
+    ../../modules/home-manager/fastfetch
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
