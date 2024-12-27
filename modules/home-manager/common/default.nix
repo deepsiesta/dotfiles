@@ -23,7 +23,7 @@
         size = 12;
       };
       settings = {
-        shell = "nu";
+        shell = "fish";
         background_opacity = "0.8";
         window_padding_width = 15;
         enable_audio_bell = "no";
@@ -33,14 +33,17 @@
     };
     carapace = {
       enable = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
     };
     zoxide = {
       enable = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
     };
     direnv = {
       enable = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
       nix-direnv.enable = true;
     };

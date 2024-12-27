@@ -18,6 +18,7 @@
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/hyprland/waybar.nix
     ../../modules/home-manager/hyprland/fuzzel.nix
+    ../../modules/home-manager/ghostty
     ../../modules/home-manager/starship/starship.nix
     ../../modules/home-manager/tmux/tmux.nix
     ../../modules/home-manager/nushell/nushell.nix
