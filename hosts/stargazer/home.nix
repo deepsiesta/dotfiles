@@ -19,9 +19,9 @@
 
   imports = [
     ../../modules/home-manager/common
-    ../../modules/home-manager/hyprland/hyprland.nix
-    ../../modules/home-manager/hyprland/waybar.nix
-    ../../modules/home-manager/hyprland/fuzzel.nix
+    ../../modules/home-manager/hyprland
+    ../../modules/home-manager/waybar
+    ../../modules/home-manager/fuzzel
     ../../modules/home-manager/ghostty
     ../../modules/home-manager/starship/starship.nix
     ../../modules/home-manager/tmux/tmux.nix
