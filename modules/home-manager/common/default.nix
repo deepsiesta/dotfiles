@@ -49,6 +49,7 @@
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
+        set -x CLICOLOR 1 # Make tree output colored
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish | source
       '';
     };
@@ -93,5 +94,9 @@
   qt = {
     enable = true;
     style.name = "adwaita-dark";
+  };
+
+  home.sessionVariables = {
+    # EDITOR = "emacs";
   };
 }
