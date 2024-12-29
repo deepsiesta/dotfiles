@@ -30,13 +30,6 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Garbage collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
-
   networking.hostName = "satella"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -74,11 +67,6 @@
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
-  # Thunar
-  programs.thunar.enable = true;
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

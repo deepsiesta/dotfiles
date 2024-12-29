@@ -2,6 +2,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -37,6 +44,11 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  # Thunar
+  programs.thunar.enable = true;
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.siesta = {
