@@ -15,9 +15,11 @@
     ../../modules/nixos/fonts
     ../../modules/nixos/sddm
     ../../modules/nixos/hyprland
+    ../../modules/nixos/gaming
     ../../modules/nixos/podman
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
+    ../../modules/nixos/emacs
   ];
 
   # Kernel
@@ -40,12 +42,6 @@
 
   # Corsair keyboard etc. support
   hardware.ckb-next.enable = true;
-
-  # Emacs daemon
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs30-pgtk;
-  };
 
   ## Nvidia stuff
 
@@ -95,45 +91,8 @@
     };
   };
 
-  # Game mode
-  programs.gamemode.enable = true;
-
-  # Install Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    fastfetch
-    pwvucontrol
-    playerctl
-    qimgv
-    hyprpicker
-    hyprshot
-    wl-clipboard
-    swww
-    kitty
-    inputs.ghostty.packages.x86_64-linux.default
-    ranger
-    tmux
-    tree
-    fd
     (ollama.override {acceleration = "cuda";})
-    # Gstreamer
-    gst_all_1.gstreamer
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
-    gst_all_1.gst-libav
   ];
 
   # This value determines the NixOS release from which the default
