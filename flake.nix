@@ -58,6 +58,14 @@
         ./inputs/aagl.nix
       ];
     };
+    nixosConfigurations.kanami = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./overlays/neovim.nix
+        ./hosts/kanami/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
     nixosConfigurations.satella = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
