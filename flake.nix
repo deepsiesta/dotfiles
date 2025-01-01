@@ -52,7 +52,6 @@
     nixosConfigurations.stargazer = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./overlays/neovim.nix
         ./hosts/stargazer/configuration.nix
         inputs.home-manager.nixosModules.default
         ./inputs/aagl.nix
@@ -61,7 +60,6 @@
     nixosConfigurations.kanami = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./overlays/neovim.nix
         ./hosts/kanami/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
@@ -69,7 +67,6 @@
     nixosConfigurations.satella = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./overlays/neovim.nix
         ./hosts/satella/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
