@@ -54,6 +54,9 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -72,7 +75,6 @@
     tmux
     tree
     fd
-    flatpak
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
