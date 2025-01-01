@@ -72,7 +72,6 @@
     tmux
     tree
     fd
-    flatpak
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -90,6 +89,7 @@
       syncplay
       gimp
       (lutris.override {extraPkgs = pkgs: [winetricks];})
+      bottles
       spotify
       qbittorrent
       insync
