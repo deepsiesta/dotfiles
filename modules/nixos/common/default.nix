@@ -90,7 +90,7 @@
       discord
       mpv
       syncplay
-      gimp
+      # gimp
       (lutris.override {extraPkgs = pkgs: [winetricks];})
       spotify
       qbittorrent
