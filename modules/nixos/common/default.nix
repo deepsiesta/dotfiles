@@ -92,6 +92,7 @@
       syncplay
       # gimp
       (lutris.override {extraPkgs = pkgs: [winetricks];})
+      bottles
       spotify
       qbittorrent
       insync
