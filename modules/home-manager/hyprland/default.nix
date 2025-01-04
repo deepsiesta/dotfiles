@@ -88,7 +88,9 @@
           "$mod, Q, killactive"
           # Kill window clicked on (xkill equivalent)
           "$mod+Shift, Q, exec, hyprctl kill"
-          # Screen capture (window)
+          # Screen capture (active window)
+          ",Print, exec, hyprshot -m window -m active -o \~\/Pictures\/Screenshots"
+          # Screen capture (window select)
           "$mod, S, exec, hyprshot --freeze -m window -o \~\/Pictures\/Screenshots"
           # Screen capture (rectangle select)
           "$mod+Shift, S, exec, hyprshot --freeze -m region -o \~\/Pictures\/Screenshots"
