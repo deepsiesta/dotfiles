@@ -39,8 +39,10 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Brightness control
   programs.light.enable = true;
 
+  # Enable OpenGL
   hardware.graphics.enable = true;
 
   home-manager = {
@@ -52,9 +54,6 @@
       "siesta" = import ./home.nix;
     };
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
