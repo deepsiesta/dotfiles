@@ -23,6 +23,7 @@
     ../../modules/home-manager/tmux
     ../../modules/home-manager/nushell
     ../../modules/home-manager/fastfetch
+    ../../modules/home-manager/emacs
   ];
 
   # Let Home Manager install and manage itself.
