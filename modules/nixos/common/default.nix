@@ -85,6 +85,7 @@
     packages = with pkgs; [
       waybar
       networkmanagerapplet
+      bitwarden-desktop
       fuzzel
       btop
       discord
