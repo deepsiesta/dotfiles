@@ -129,7 +129,6 @@
         " , XF86AudioNext, exec, playerctl next"
       ];
       exec-once = [
-        "uwsm app -- swww-daemon --format xrgb"
         "uwsm app -- waybar &"
         "uwsm app -- nm-applet --indicator &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
@@ -138,6 +137,8 @@
       ];
     };
   };
+
+  services.hyprpaper.enable = true;
 
   programs.hyprlock = {
     enable = true;
