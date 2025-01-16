@@ -13,10 +13,11 @@
         background = "000000cc";
         text = "ffffffff";
         selection = "121212dd";
+        selection-text = "30c0f0dd";
         border = "30c0f0ff";
       };
       border = {
-        width = 3;
+        width = 2;
         radius = 0;
       };
     };
