@@ -168,11 +168,11 @@
 (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch) :height 0.85)
 (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
-(set-face-attribute 'line-number nil :inherit 'fixed-pitch)
-(set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
-(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+;; (add-hook 'org-mode-hook 'variable-pitch-mode)
+;; (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+;; (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
+;; (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
+;; (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
 
 (after! nix-mode
   (set-formatter! 'alejandra '("alejandra" "--quiet") :modes '(nix-mode)))
