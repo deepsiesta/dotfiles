@@ -23,9 +23,6 @@
 ;;
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 16)
       doom-variable-pitch-font (font-spec :family "Noto Sans" :size 16))
-;; (setq doom-font (font-spec :family "Noto Sans" :size 16)
-;;      doom-variable-pitch-font (font-spec :family "Noto Serif" :size 18))
-;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 16))
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -40,6 +37,7 @@
 (add-to-list 'default-frame-alist '(alpha-background . 80))
 (custom-theme-set-faces! 'doom-tokyo-night
   '(default :background "#000000")
+  '(line-number :background "#000000")
   '(org-modern-todo :height 1.2)
   '(org-modern-done :height 1.2)
   '(org-modern-symbol :height 1.2)
@@ -97,82 +95,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(use-package! colorful-mode
-  :ensure t)
-
-;; org-modern
-;; (setq org-modern-label-border -0.3)
-;; (global-org-modern-mode)
-(use-package! org-modern
-  :hook '(org-mode . org-modern-mode)
-  :config
-  (setq org-auto-align-tags nil
-        org-tags-column 0
-        org-fold-catch-invisible-edits 'show-and-error
-        org-special-ctrl-a/e t
-        org-insert-heading-respect-content t
-
-        ;; Org styling, hide markup etc.
-        org-hide-emphasis-markers t
-        ;; org-pretty-entities t
-        org-ellipsis "…"
-
-        ;; Agenda styling
-        org-agenda-tags-column 0
-        org-agenda-block-separator ?─
-        org-agenda-time-grid
-        '((daily today require-timed)
-          (800 1000 1200 1400 1600 1800 2000)
-          " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
-        org-agenda-current-time-string
-        "⭠ now ─────────────────────────────────────────────────"
-        org-src-fontify-natively t
-        org-src-tab-acts-natively t
-        org-edit-src-content-indentation 0))
-
-(use-package! org-superstar
-  :config
-  ;; This is usually the default, but keep in mind it must be nil
-  (setq org-hide-leading-stars nil
-        ;; This line is necessary.
-        org-superstar-leading-bullet ?\s
-        ;; If you use Org Indent you also need to add this, otherwise the
-        ;; above has no effect while Indent is enabled.
-        org-indent-mode-turns-on-hiding-stars nil))
-
-;; (setq line-spacing 0.2
-;;       org-adapt-indentation t
-;;       org-hide-leading-stars t
-;;       org-hide-emphasis-markers t
-;;       org-pretty-entities t
-;;       org-ellipsis "  ·"))
-;; Resize Org headings
-;; (dolist (face '((org-level-1 . 1.35)
-;;                 (org-level-2 . 1.3)
-;;                 (org-level-3 . 1.2)
-;;                 (org-level-4 . 1.1)
-;;                 (org-level-5 . 1.1)
-;;                 (org-level-6 . 1.1)
-;;                 (org-level-7 . 1.1)
-;;                 (org-level-8 . 1.1)))
-;;   (set-face-attribute (car face) nil :font "Noto Sans" :weight 'bold :height (cdr face)))
-
-;; Make the document title a bit bigger
-;; (set-face-attribute 'org-document-title nil :font "Noto Sans" :weight
-;; 'bold :height 1.8)
-(require 'org-indent)
-(set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
-(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85)
-(set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch) :height 0.85)
-(set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch) :height 0.85)
-(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch) :height 0.85)
-(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-;; (add-hook 'org-mode-hook 'variable-pitch-mode)
-;; (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
-;; (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
-;; (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
-;; (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
-
 (after! nix-mode
   (set-formatter! 'alejandra '("alejandra" "--quiet") :modes '(nix-mode)))
+
