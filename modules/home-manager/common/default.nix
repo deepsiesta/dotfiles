@@ -45,6 +45,7 @@
       enable = true;
       nix-direnv.enable = true;
     };
+    bash.enable = true;
     fish = {
       enable = true;
       interactiveShellInit = ''

@@ -18,7 +18,6 @@
     ../../modules/nixos/gaming
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
-    ../../modules/nixos/emacs
   ];
 
   # Kernel

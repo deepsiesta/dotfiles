@@ -19,7 +19,6 @@
     ../../modules/nixos/nvidia
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
-    ../../modules/nixos/emacs
   ];
 
   # Kernel
