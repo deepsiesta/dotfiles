@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -22,6 +22,16 @@
     { device = "/dev/disk/by-uuid/C958-643B";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/home/siesta/hdd" =
+    { device = "/dev/disk/by-uuid/100253040252EDEA";
+      fsType = "ntfs";
+    };
+
+  fileSystems."/home/siesta/old-sdd" =
+    { device = "/dev/disk/by-uuid/FA84831A8482D911";
+      fsType = "ntfs";
     };
 
   swapDevices =
