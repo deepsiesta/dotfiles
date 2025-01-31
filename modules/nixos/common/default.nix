@@ -91,6 +91,7 @@
       mpv
       syncplay
       # gimp
+      imagemagick
       (lutris.override {extraPkgs = pkgs: [winetricks];})
       bottles
       spotify
