@@ -34,13 +34,7 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     aagl = {
       url = "github:ezKEA/aagl-gtk-on-nix";
