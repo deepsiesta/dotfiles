@@ -15,6 +15,7 @@
 
   imports = [
     ../../modules/home-manager/common
+    ../../modules/home-manager/gui
     ../../modules/home-manager/hyprland
     ../../modules/home-manager/waybar
     ../../modules/home-manager/fuzzel

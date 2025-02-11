@@ -38,21 +38,8 @@
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
   };
-  security = {
-    polkit.enable = true;
-    pam.services.hyprlock = {};
-  };
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Thunar
-  programs.thunar.enable = true;
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
+  security.polkit.enable = true;
 
   # Flatpak
   services.flatpak.enable = true;
@@ -62,18 +49,15 @@
     wget
     curl
     fastfetch
-    pwvucontrol
     playerctl
     qimgv
-    hyprpicker
-    hyprshot
-    wl-clipboard
-    kitty
-    inputs.ghostty.packages.x86_64-linux.default
-    ranger
+    imagemagick
     tmux
     tree
     fd
+    ripgrep
+    tldr
+    btop
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -81,26 +65,7 @@
     isNormalUser = true;
     description = "Siesta";
     extraGroups = ["networkmanager" "video" "wheel"];
-    packages = with pkgs; [
-      waybar
-      networkmanagerapplet
-      bitwarden-desktop
-      fuzzel
-      btop
-      discord
-      mpv
-      syncplay
-      # gimp
-      imagemagick
-      (lutris.override {extraPkgs = pkgs: [winetricks];})
-      bottles
-      spotify
-      qbittorrent
-      insync
-      okular
-      fd
-      ripgrep
-      tldr
-    ];
+    # packages = with pkgs; [
+    # ];
   };
 }
