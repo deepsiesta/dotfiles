@@ -66,5 +66,12 @@
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ];
     };
+    nixosConfigurations.warg = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/warg/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
   };
 }
