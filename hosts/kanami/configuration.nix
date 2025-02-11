@@ -42,6 +42,9 @@
   # Enable OpenGL
   hardware.graphics.enable = true;
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   home-manager = {
     # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};

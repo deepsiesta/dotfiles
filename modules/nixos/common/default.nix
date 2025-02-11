@@ -41,9 +41,6 @@
 
   security.polkit.enable = true;
 
-  # Flatpak
-  services.flatpak.enable = true;
-
   environment.systemPackages = with pkgs; [
     vim
     wget

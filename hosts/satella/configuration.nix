@@ -44,6 +44,9 @@
   # Enable OpenGL
   hardware.graphics.enable = true;
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   home-manager = {
     # Backup existing files
     # backupFileExtension = "hm-backup";
