@@ -46,19 +46,19 @@
       name = "Tokyonight-Dark";
     };
     iconTheme = {
-      name = "candy-icons";
-      # Merge Candy Icons and Sweet Folders into the same package
-      package = pkgs.candy-icons.overrideAttrs (oldAttrs: {
-        postInstall = ''
-          cp ${pkgs.sweet-folders}/share/icons/Sweet-Rainbow/Places/* $out/share/icons/candy-icons/places/48
-        '';
-      });
+      name = "Sweet-Rainbow";
+      package = pkgs.sweet-folders;
     };
     font = {
       name = "Noto Sans";
       size = 12;
     };
   };
+
+  # Sweet Folders requires Candy Icons for non-folder icons
+  home.packages = with pkgs; [
+    candy-icons
+  ];
 
   qt = {
     enable = true;
