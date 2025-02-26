@@ -40,6 +40,7 @@
     networkmanagerapplet
     bitwarden-desktop
     fuzzel
+    qimgv
     discord
     mpv
     syncplay
@@ -49,7 +50,7 @@
     spotify
     qbittorrent
     insync
-    okular
+    kdePackages.okular
   ];
 
   # Tell Electron apps to use Wayland

@@ -46,6 +46,7 @@
     nixosConfigurations.stargazer = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        ./overlays/qimgv.nix
         ./hosts/stargazer/configuration.nix
         inputs.home-manager.nixosModules.default
         ./inputs/aagl.nix
@@ -54,6 +55,7 @@
     nixosConfigurations.kanami = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        ./overlays/qimgv.nix
         ./hosts/kanami/configuration.nix
         inputs.home-manager.nixosModules.default
       ];

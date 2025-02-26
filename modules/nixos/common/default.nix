@@ -47,7 +47,6 @@
     curl
     fastfetch
     playerctl
-    qimgv
     imagemagick
     tmux
     tree
