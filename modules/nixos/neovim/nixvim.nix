@@ -369,12 +369,12 @@
       nix.enable = true;
       nix-develop.enable = true;
       obsidian = {
-        enable = true;
+        enable = false;
         settings = {
           workspaces = [
             {
               name = "General";
-              path = "~/Documents/obsidian";
+              path = "~/Drive/obsidian";
             }
           ];
         };

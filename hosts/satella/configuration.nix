@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
+  lib,
   pkgs,
   inputs,
   ...
@@ -46,6 +47,9 @@
 
   # Flatpak
   services.flatpak.enable = true;
+
+  # Enable Obsidian plugin for Neovim
+  programs.nixvim.plugins.obsidian.enable = lib.mkForce true;
 
   home-manager = {
     # Backup existing files
