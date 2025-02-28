@@ -51,6 +51,7 @@
     qbittorrent
     insync
     kdePackages.okular
+    obsidian
   ];
 
   # Tell Electron apps to use Wayland
