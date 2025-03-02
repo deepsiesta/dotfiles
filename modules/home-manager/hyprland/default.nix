@@ -67,8 +67,9 @@
           # "$mod, E, exec, dolphin --new-window"
           "$mod, E, exec, uwsm-app -- thunar"
           # "$mod+Shift, E, exec, uwsm-app -- emacsclient -c"
-          "$mod+Shift, E, exec, uwsm-app -- emacs"
+          # "$mod+Shift, E, exec, uwsm-app -- emacs"
           "$mod, W, exec, uwsm-app -- firefox"
+          "$mod, D, exec, uwsm-app -- discord"
           # Move focus
           "$mod, Left, movefocus, l"
           "$mod, Right, movefocus, r"
