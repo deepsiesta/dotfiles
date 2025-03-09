@@ -11,13 +11,13 @@
     kitty = {
       enable = true;
       font = {
-        name = "FiraCode Nerd Font";
+        name = "FiraCode Nerd Font Light";
         size = 12;
       };
       settings = {
         shell = "fish";
         background_opacity = "0.8";
-        window_padding_width = 15;
+        window_padding_width = 20;
         enable_audio_bell = "no";
         window_alert_on_bell = "no";
       };

@@ -35,7 +35,6 @@
     hyprshot
     wl-clipboard
     kitty
-    inputs.ghostty.packages.x86_64-linux.default
     waybar
     networkmanagerapplet
     bitwarden-desktop

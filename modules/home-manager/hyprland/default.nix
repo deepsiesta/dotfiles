@@ -63,7 +63,7 @@
       bind =
         [
           # Essentials
-          "$mod, T, exec, uwsm-app -- ghostty"
+          "$mod, T, exec, uwsm-app -- kitty"
           # "$mod, E, exec, dolphin --new-window"
           "$mod, E, exec, uwsm-app -- thunar"
           # "$mod+Shift, E, exec, uwsm-app -- emacsclient -c"
@@ -135,7 +135,7 @@
         "uwsm app -- nm-applet --indicator &"
         "hyprctl setcursor Bibata-Modern-Classic 24"
         "uwsm app -- discord --enable-features=UseOzonePlatform --ozone-platform=wayland --start-minimized"
-        "[workspace special:scratchpad silent] uwsm app -- ghostty"
+        "[workspace special:scratchpad silent] uwsm app -- kitty"
       ];
     };
   };

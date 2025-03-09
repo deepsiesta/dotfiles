@@ -19,7 +19,6 @@
     ../../modules/home-manager/hyprland
     ../../modules/home-manager/waybar
     ../../modules/home-manager/fuzzel
-    ../../modules/home-manager/ghostty
     ../../modules/home-manager/starship
     ../../modules/home-manager/tmux
     ../../modules/home-manager/nushell
