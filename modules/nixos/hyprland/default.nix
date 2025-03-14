@@ -51,6 +51,7 @@
     insync
     kdePackages.okular
     obsidian
+    komikku
   ];
 
   # Tell Electron apps to use Wayland
