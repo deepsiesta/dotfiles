@@ -52,6 +52,7 @@
     kdePackages.okular
     obsidian
     komikku
+    code-cursor
   ];
 
   # Tell Electron apps to use Wayland
