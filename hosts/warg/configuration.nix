@@ -55,6 +55,7 @@
   };
 
   # Use fish as default shell
+  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   # List services that you want to enable:
