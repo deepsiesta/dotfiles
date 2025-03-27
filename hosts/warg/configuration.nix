@@ -54,6 +54,9 @@
     };
   };
 
+  # Use fish as default shell
+  users.defaultUserShell = pkgs.fish;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
