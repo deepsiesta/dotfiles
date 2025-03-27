@@ -31,7 +31,7 @@
     };
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  # home.sessionVariables = {
+  # EDITOR = "nvim"; # nixvim handles this
+  # };
 }
