@@ -7,7 +7,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Add trusted users for substituters
-  nix.trustedUsers = ["root" "@wheel"];
+  nix.settings.trusted-users = ["root" "@wheel"];
 
   # Garbage collection
   nix.gc = {
