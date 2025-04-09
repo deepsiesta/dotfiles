@@ -6,6 +6,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Add trusted users for substituters
+  nix.trustedUsers = ["root" "@wheel"];
+
   # Garbage collection
   nix.gc = {
     automatic = true;
