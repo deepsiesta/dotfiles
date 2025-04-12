@@ -5,6 +5,7 @@
     settings = {
       "$col_active" = "0xFF30C0F0";
       env = [
+        "GDK_BACKEND, wayland"
         "QT_QPA_PLATFORM, wayland"
         "QT_QPA_PLATFORMTHEME, qt5ct"
         "XDG_CURRENT_DESKTOP,Hyprland"
