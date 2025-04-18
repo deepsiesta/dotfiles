@@ -46,7 +46,7 @@
     discord
     mpv
     syncplay
-    # gimp
+    gimp3
     (lutris.override {extraPkgs = pkgs: [winetricks];})
     bottles
     spotify
