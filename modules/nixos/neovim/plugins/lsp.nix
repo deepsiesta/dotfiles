@@ -30,6 +30,11 @@
       };
     };
 
+    diagnostics = {
+      enable = true;
+      virtual_text = true;
+    };
+
     # Brief aside: **What is LSP?**
     #
     # LSP is an initialism you've probably heard, but might not understand what it is.
