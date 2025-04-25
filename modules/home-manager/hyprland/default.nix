@@ -34,6 +34,7 @@
         kb_layout = "us";
         kb_variant = "altgr-intl";
         numlock_by_default = true;
+        accel_profile = "flat";
         follow_mouse = 2;
       };
       animations = {
