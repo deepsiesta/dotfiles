@@ -30,7 +30,7 @@
       };
     };
 
-    diagnostics = {
+    diagnostic.settings = {
       enable = true;
       virtual_text = true;
     };
