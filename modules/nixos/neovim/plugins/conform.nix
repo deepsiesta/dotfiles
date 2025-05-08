@@ -7,6 +7,7 @@
       # Used to format Lua code
       stylua
       nodePackages.markdownlint-cli
+      jq
       alejandra
       prettierd
       ruff
@@ -37,6 +38,7 @@
           python = ["ruff_format"];
           markdown = ["markdownlint"];
           javascript = ["prettierd"];
+          json = ["jq"];
           latex = ["latexindent"];
           # nu = ["nufmt"];
           # Conform can also run multiple formatters sequentially
