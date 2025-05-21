@@ -59,6 +59,7 @@
         );
       exec-once = [
         "uwsm app -- ckb-next --background"
+        "uwsm app -- solaar --window hide"
         "uwsm app -- steam -silent"
       ];
     };
