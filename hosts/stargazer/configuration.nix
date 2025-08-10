@@ -15,6 +15,7 @@
     ../../modules/nixos/audio
     ../../modules/nixos/fonts
     ../../modules/nixos/sddm
+    ../../modules/nixos/gui
     ../../modules/nixos/hyprland
     ../../modules/nixos/gaming
     ../../modules/nixos/podman
