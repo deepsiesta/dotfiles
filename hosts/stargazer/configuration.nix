@@ -58,9 +58,6 @@
   # Flatpak
   services.flatpak.enable = true;
 
-  # Enable Obsidian plugin for Neovim
-  programs.nixvim.plugins.obsidian.enable = lib.mkForce true;
-
   home-manager = {
     # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};

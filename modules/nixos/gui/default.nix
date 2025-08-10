@@ -12,6 +12,9 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
+  # Enable Obsidian plugin for Neovim
+  # programs.nixvim.plugins.obsidian.enable = lib.mkForce true;
+
   environment.systemPackages = with pkgs; [
     kitty
     bitwarden-desktop

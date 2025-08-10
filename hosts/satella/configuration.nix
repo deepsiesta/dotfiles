@@ -52,9 +52,6 @@
   # Flatpak
   services.flatpak.enable = true;
 
-  # Enable Obsidian plugin for Neovim
-  programs.nixvim.plugins.obsidian.enable = lib.mkForce true;
-
   home-manager = {
     # Backup existing files
     # backupFileExtension = "hm-backup";

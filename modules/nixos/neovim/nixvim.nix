@@ -368,6 +368,7 @@
       typescript-tools.enable = true;
       nix.enable = true;
       nix-develop.enable = true;
+      # Obsidian is disabled by default to avoid error messages from missing folders
       obsidian = {
         enable = false;
         settings = {
