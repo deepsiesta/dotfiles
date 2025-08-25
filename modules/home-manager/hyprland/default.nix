@@ -4,15 +4,6 @@
     systemd.enable = false;
     settings = {
       "$col_active" = "0xFF30C0F0";
-      env = [
-        "GDK_BACKEND, wayland"
-        "QT_QPA_PLATFORM, wayland"
-        "QT_QPA_PLATFORMTHEME, qt5ct"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-      ];
       general = {
         gaps_in = 4;
         gaps_out = 8;
@@ -171,4 +162,17 @@
       ];
     };
   };
+
+  # With UWSM, environment variables should not be placed in hyprland.conf
+  xdg.configFile."uwsm/env".text = ''
+    export GDK_BACKEND=wayland
+    export QT_QPA_PLATFORM=wayland
+    export QT_QPA_PLATFORMTHEME=qt5ct
+    export XDG_CURRENT_DESKTOP=Hyprland
+    export XDG_SESSION_TYPE=wayland
+    export XDG_SESSION_DESKTOP=Hyprland
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export NIXOS_OZONE_WL=1
+    export GSK_RENDERER=ngl
+  '';
 }
