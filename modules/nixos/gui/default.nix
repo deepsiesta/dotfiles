@@ -32,7 +32,6 @@
     insync
     kdePackages.okular
     obsidian
-    komikku
     vscode-fhs
   ];
 }
