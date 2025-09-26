@@ -37,8 +37,8 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        "DP-3, 2560x1440@120, 0x0, 1"
-        "DP-1, 2560x1440@120, 2560x0, 1"
+        "HDMI-A-1, 3840x2160@60, 0x0, 2"
+        "DP-1, 2560x1440@120, 1920x0, 1"
       ];
       workspace =
         [
@@ -51,7 +51,7 @@
                 wleft = 2 * i + 1;
                 wright = 2 * i + 2;
               in [
-                "${toString wleft}, monitor:DP-3"
+                "${toString wleft}, monitor:HDMI-A-1"
                 "${toString wright}, monitor:DP-1"
               ]
             )
