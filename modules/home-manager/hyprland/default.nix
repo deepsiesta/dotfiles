@@ -55,6 +55,7 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
       };
+      xwayland.force_zero_scaling = true;
       # Keybinds
       "$mod" = "Super";
       bind =
@@ -173,6 +174,5 @@
     export XDG_SESSION_DESKTOP=Hyprland
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
     export NIXOS_OZONE_WL=1
-    export GSK_RENDERER=ngl
   '';
 }
