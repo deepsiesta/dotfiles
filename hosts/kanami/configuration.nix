@@ -2,9 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -45,6 +45,9 @@
 
   # Flatpak
   services.flatpak.enable = true;
+
+  # Old GPUs cannot use the open kernel module
+  hardware.nvidia.open = lib.mkForce false;
 
   home-manager = {
     # Pass inputs to home-manager modules
