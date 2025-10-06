@@ -57,6 +57,10 @@
       cmakeFlags = (old.cmakeFlags or []) ++ ["-DUSE_DBUS_MENU=0"];
     });
   };
+
+  # Xbox Controller
+  hardware.xone.enable = true;
+
   # Enable OpenGL
   hardware.graphics.enable = true;
 
