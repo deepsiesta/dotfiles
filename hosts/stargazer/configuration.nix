@@ -29,6 +29,9 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   hardware.cpu.intel.updateMicrocode = true;
 
+  # Enable firmware updates
+  services.fwupd.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
