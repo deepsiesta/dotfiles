@@ -32,6 +32,6 @@
     insync
     kdePackages.okular
     obsidian
-    vscode-fhs
+    vscodium-fhs
   ];
 }
