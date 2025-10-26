@@ -3,8 +3,10 @@
     git = {
       enable = true;
       lfs.enable = true;
-      userName = "Siesta";
-      userEmail = "20047950+deepsiesta@users.noreply.github.com";
+      settings = {
+        user.name = "Siesta";
+        user.email = "20047950+deepsiesta@users.noreply.github.com";
+      };
     };
     carapace = {
       enable = true;
