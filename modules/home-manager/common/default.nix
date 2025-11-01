@@ -28,7 +28,7 @@
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
         set -x CLICOLOR 1 # Make tree output colored
-        fish_add_path ~/.config/emacs/bin
+        # fish_add_path ~/.config/emacs/bin
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish | source
       '';
     };

@@ -20,7 +20,7 @@
         size = 12;
       };
       settings = {
-        shell = "fish";
+        shell = "nu";
         background_opacity = "0.8";
         window_padding_width = 20;
         enable_audio_bell = "no";

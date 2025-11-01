@@ -14,6 +14,9 @@ let external_completer = {|spans|
   } | do $in $spans
 }
 
+# Make tree show colored output
+$env.CLICOLOR = 1
+
 $env.config = {
   show_banner: false
   completions: {
