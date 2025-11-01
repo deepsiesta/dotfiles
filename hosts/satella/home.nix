@@ -23,7 +23,7 @@
     ../../modules/home-manager/tmux
     ../../modules/home-manager/nushell
     ../../modules/home-manager/fastfetch
-    ../../modules/home-manager/emacs
+    # ../../modules/home-manager/emacs
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

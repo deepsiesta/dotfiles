@@ -23,7 +23,7 @@
     ../../modules/home-manager/tmux
     ../../modules/home-manager/nushell
     ../../modules/home-manager/fastfetch
-    ../../modules/home-manager/emacs
+    # ../../modules/home-manager/emacs
   ];
 
   wayland.windowManager.hyprland = {
