@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   programs.fuzzel = {
     enable = true;
     settings = {
@@ -9,7 +9,7 @@
         font = "Noto Sans:size=12";
         launch-prefix = "uwsm-app --";
       };
-      colors = {
+      colors = lib.mkForce {
         background = "000000cc";
         text = "ffffffff";
         selection = "121212dd";

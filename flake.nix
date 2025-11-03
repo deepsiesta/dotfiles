@@ -29,6 +29,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim.url = "github:nix-community/nixvim";
 
     aagl = {
@@ -43,6 +48,7 @@
       modules = [
         ./hosts/stargazer/configuration.nix
         inputs.home-manager.nixosModules.default
+        inputs.stylix.nixosModules.stylix
         ./inputs/aagl.nix
       ];
     };
@@ -51,6 +57,7 @@
       modules = [
         ./hosts/kanami/configuration.nix
         inputs.home-manager.nixosModules.default
+        inputs.stylix.nixosModules.stylix
       ];
     };
     nixosConfigurations.satella = nixpkgs.lib.nixosSystem {
@@ -59,6 +66,7 @@
         ./hosts/satella/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+        inputs.stylix.nixosModules.stylix
       ];
     };
     nixosConfigurations.warg = nixpkgs.lib.nixosSystem {

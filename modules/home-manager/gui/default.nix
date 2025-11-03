@@ -15,27 +15,14 @@
   programs = {
     kitty = {
       enable = true;
-      font = {
-        name = "FiraCode Nerd Font Light";
-        size = 12;
-      };
       settings = {
         shell = "nu";
-        background_opacity = "0.8";
         window_padding_width = 20;
         enable_audio_bell = "no";
         window_alert_on_bell = "no";
       };
       shellIntegration.enableFishIntegration = true;
     };
-  };
-
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 24;
   };
 
   dconf.settings = {
@@ -46,17 +33,9 @@
 
   gtk = {
     enable = true;
-    theme = {
-      package = pkgs.tokyonight-gtk-theme;
-      name = "Tokyonight-Dark";
-    };
     iconTheme = {
       name = "Sweet-Rainbow";
       package = pkgs.sweet-folders;
-    };
-    font = {
-      name = "Noto Sans";
-      size = 12;
     };
   };
 
@@ -67,6 +46,5 @@
 
   qt = {
     enable = true;
-    style.name = "adwaita-dark";
   };
 }

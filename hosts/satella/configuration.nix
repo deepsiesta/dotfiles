@@ -17,6 +17,7 @@
     ../../modules/nixos/sddm
     ../../modules/nixos/gui
     ../../modules/nixos/hyprland
+    ../../modules/nixos/stylix
     ../../modules/nixos/gaming
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix

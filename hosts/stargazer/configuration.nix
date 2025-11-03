@@ -17,6 +17,7 @@
     ../../modules/nixos/sddm
     ../../modules/nixos/gui
     ../../modules/nixos/hyprland
+    ../../modules/nixos/stylix
     ../../modules/nixos/gaming
     ../../modules/nixos/podman
     ../../modules/nixos/nvidia
