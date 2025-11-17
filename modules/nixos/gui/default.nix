@@ -4,11 +4,7 @@
   ...
 }: {
   # Install firefox.
-  programs.firefox = {
-    enable = true;
-    # Temp fix for build failure with CUDA
-    package = pkgs.firefox.overrideAttrs {disallowedRequisites = [];};
-  };
+  programs.firefox.enable = true;
 
   # Thunar
   programs.thunar.enable = true;
