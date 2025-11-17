@@ -9,6 +9,9 @@
   # Add trusted users for substituters
   nix.settings.trusted-users = ["root" "@wheel"];
 
+  # Nix store optimization
+  nix.settings.auto-optimise-store = true;
+
   # Garbage collection
   nix.gc = {
     automatic = true;
