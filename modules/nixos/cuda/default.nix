@@ -3,6 +3,6 @@
   nixpkgs.config.cudaSupport = true;
 
   environment.systemPackages = with pkgs; [
-    (ollama.override {acceleration = "cuda";})
+    ollama-cuda
   ];
 }
