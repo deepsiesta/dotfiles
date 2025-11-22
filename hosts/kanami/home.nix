@@ -31,6 +31,9 @@
       monitor = [
         "DP-1, 2560x1440@144, 0x0, 1"
       ];
+      input = {
+        numlock_by_default = lib.mkForce false;
+      };
     };
   };
 
