@@ -49,7 +49,6 @@
         ./hosts/stargazer/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
-        ./inputs/aagl.nix
       ];
     };
     nixosConfigurations.kanami = nixpkgs.lib.nixosSystem {
