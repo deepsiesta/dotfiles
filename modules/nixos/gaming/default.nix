@@ -2,6 +2,9 @@
   # Game mode
   programs.gamemode.enable = true;
 
+  # 32 bit libraries
+  hardware.graphics.enable32Bit = true;
+
   # Install Steam
   programs.steam = {
     enable = true;
