@@ -33,5 +33,6 @@
     kdePackages.okular
     obsidian
     vscodium-fhs
+    antigravity-fhs
   ];
 }
