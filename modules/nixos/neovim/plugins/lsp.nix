@@ -80,9 +80,8 @@
         # gopls = {
         #  enable = true;
         #}
-        pyright = {
-          enable = true;
-        };
+        # pyright.enable = true;
+        ty.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = true;
