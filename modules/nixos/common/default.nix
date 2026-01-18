@@ -12,11 +12,12 @@
   # Nix store optimization
   nix.settings.auto-optimise-store = true;
 
-  # Garbage collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  # Garbage collection and nh
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--no-gcroots --keep 3 --keep-since 14d --optimise";
+    flake = "/home/siesta/dotfiles";
   };
 
   # Enable networking
