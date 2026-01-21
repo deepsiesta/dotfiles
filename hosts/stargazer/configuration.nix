@@ -19,6 +19,7 @@
     ../../modules/nixos/hyprland
     ../../modules/nixos/stylix
     ../../modules/nixos/gaming
+    ../../modules/nixos/obs
     ../../modules/nixos/aagl
     ../../modules/nixos/podman
     ../../modules/nixos/nvidia
