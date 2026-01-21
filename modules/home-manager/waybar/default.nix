@@ -71,4 +71,7 @@
     };
     style = builtins.readFile ./waybar.css;
   };
+
+  # XEmbed compatibility (for Wine tray icons)
+  services.xembed-sni-proxy.enable = true;
 }
