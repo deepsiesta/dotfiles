@@ -48,6 +48,12 @@
 
   security.polkit.enable = true;
 
+  # Allow running AppImage files as normal executables
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     wget
