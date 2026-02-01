@@ -19,6 +19,7 @@
     ../../modules/nixos/hyprland
     ../../modules/nixos/stylix
     ../../modules/nixos/gaming
+    ../../modules/nixos/slack
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
   ];
