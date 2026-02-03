@@ -20,6 +20,7 @@
     ../../modules/nixos/stylix
     ../../modules/nixos/gaming
     ../../modules/nixos/slack
+    ../../modules/nixos/docker
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/neovim/nixvim.nix
   ];

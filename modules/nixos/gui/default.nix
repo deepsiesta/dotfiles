@@ -34,5 +34,6 @@
     obsidian
     vscodium-fhs
     antigravity-fhs
+    code-cursor-fhs
   ];
 }
