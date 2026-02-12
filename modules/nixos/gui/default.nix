@@ -35,5 +35,6 @@
     vscodium-fhs
     antigravity-fhs
     code-cursor-fhs
+    cursor-cli
   ];
 }
