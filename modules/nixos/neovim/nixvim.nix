@@ -1,4 +1,4 @@
-{
+{ flake.modules.nixos.neovim = {
   pkgs,
   inputs,
   ...
@@ -15,30 +15,30 @@
     #inputs.nixvim.nixDarwinModules.nixvim
 
     # Plugins
-    ./plugins/gitsigns.nix
-    ./plugins/which-key.nix
-    ./plugins/telescope.nix
-    ./plugins/conform.nix
-    ./plugins/lsp.nix
-    ./plugins/nvim-cmp.nix
-    ./plugins/mini.nix
-    ./plugins/treesitter.nix
+    ./_plugins/gitsigns.nix
+    ./_plugins/which-key.nix
+    ./_plugins/telescope.nix
+    ./_plugins/conform.nix
+    ./_plugins/lsp.nix
+    ./_plugins/nvim-cmp.nix
+    ./_plugins/mini.nix
+    ./_plugins/treesitter.nix
 
     # NOTE: Add/Configure additional plugins for Kickstart.nixvim
     #
     #  Here are some example plugins that I've included in the Kickstart repository.
     #  Uncomment any of the lines below to enable them (you will need to restart nvim).
 
-    # ./plugins/kickstart/plugins/debug.nix
-    ./plugins/kickstart/plugins/indent-blankline.nix
-    ./plugins/kickstart/plugins/lint.nix
-    ./plugins/kickstart/plugins/autopairs.nix
-    ./plugins/kickstart/plugins/neo-tree.nix
+    # ./_plugins/kickstart/plugins/debug.nix
+    ./_plugins/kickstart/plugins/indent-blankline.nix
+    ./_plugins/kickstart/plugins/lint.nix
+    ./_plugins/kickstart/plugins/autopairs.nix
+    ./_plugins/kickstart/plugins/neo-tree.nix
 
     # NOTE: Configure your own plugins `see https://nix-community.github.io/nixvim/`
-    # Add your plugins to ./plugins/custom/plugins and import them below
-    ./plugins/custom/plugins/vimtex.nix
-    # ./plugins/custom/plugins/transparent.nix
+    # Add your plugins to ./_plugins/custom/plugins and import them below
+    ./_plugins/custom/plugins/vimtex.nix
+    # ./_plugins/custom/plugins/transparent.nix
   ];
 
   /*
@@ -409,4 +409,4 @@
       -- vim: ts=2 sts=2 sw=2 et
     '';
   };
-}
+}; }

@@ -1,4 +1,8 @@
-{lib, ...}: {
+{ flake.modules.homeManager.hyprland = {
+  lib,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -175,4 +179,4 @@
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
     export NIXOS_OZONE_WL=1
   '';
-}
+}; }

@@ -1,4 +1,4 @@
-{
+{ flake.modules.homeManager.fastfetch = {
   config,
   pkgs,
   ...
@@ -7,4 +7,4 @@
     enable = true;
   };
   home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
-}
+}; }

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{ flake.modules.nixos.sddm = { pkgs, ... }: let
   sddm-astronaut = pkgs.sddm-astronaut.override {
     themeConfig = {
       Font = "Noto Sans";
@@ -20,4 +20,4 @@ in {
     };
   };
   environment.systemPackages = [sddm-astronaut];
-}
+}; }

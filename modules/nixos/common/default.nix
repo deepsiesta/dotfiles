@@ -1,6 +1,5 @@
-{
+{ flake.modules.nixos.common = {
   pkgs,
-  inputs,
   ...
 }: {
   # Allow unfree packages
@@ -77,4 +76,4 @@
     # packages = with pkgs; [
     # ];
   };
-}
+}; }

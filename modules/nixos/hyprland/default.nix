@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{ flake.modules.nixos.hyprland = { pkgs, ... }: {
   programs.uwsm = {
     enable = true;
   };
@@ -30,4 +26,4 @@
     networkmanagerapplet
     fuzzel
   ];
-}
+}; }

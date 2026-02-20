@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.homeManager.tmux = {pkgs, ...}: {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.nushell}/bin/nu";
@@ -28,4 +28,4 @@
       set -g status-bg default
     '';
   };
-}
+}; }

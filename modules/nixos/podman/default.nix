@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.nixos.podman = { pkgs, ... }: {
   virtualisation = {
     containers.enable = true;
     podman = {
@@ -12,4 +12,4 @@
     podman-tui
     podman-compose
   ];
-}
+}; }

@@ -1,4 +1,4 @@
-{config, ...}: {
+{ flake.modules.nixos.nvidia = { config, ... }: {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -31,4 +31,4 @@
     package = config.boot.kernelPackages.nvidiaPackages.production; # Default
     # package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
-}
+}; }

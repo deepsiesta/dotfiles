@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ flake.modules.homeManager.fuzzel = {lib, ...}: {
   programs.fuzzel = {
     enable = true;
     settings = {
@@ -22,4 +22,4 @@
       };
     };
   };
-}
+}; }

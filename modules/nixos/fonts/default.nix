@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.nixos.fonts = { pkgs, ... }: {
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -16,4 +16,4 @@
       };
     };
   };
-}
+}; }

@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ flake.modules.homeManager.kanami = { lib, inputs, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "siesta";
@@ -14,16 +14,16 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
-    ../../modules/home-manager/common
-    ../../modules/home-manager/gui
-    ../../modules/home-manager/hyprland
-    ../../modules/home-manager/waybar
-    ../../modules/home-manager/fuzzel
-    ../../modules/home-manager/starship
-    ../../modules/home-manager/tmux
-    ../../modules/home-manager/nushell
-    ../../modules/home-manager/fastfetch
-    ../../modules/home-manager/stylix
+    inputs.self.modules.homeManager.common
+    inputs.self.modules.homeManager.gui
+    inputs.self.modules.homeManager.hyprland
+    inputs.self.modules.homeManager.waybar
+    inputs.self.modules.homeManager.fuzzel
+    inputs.self.modules.homeManager.starship
+    inputs.self.modules.homeManager.tmux
+    inputs.self.modules.homeManager.nushell
+    inputs.self.modules.homeManager.fastfetch
+    inputs.self.modules.homeManager.stylix
   ];
 
   wayland.windowManager.hyprland = {
@@ -39,4 +39,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-}
+}; }

@@ -1,4 +1,4 @@
-{...}: {
+{ flake.modules.homeManager.warg = { inputs, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "siesta";
@@ -14,11 +14,11 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
-    ../../modules/home-manager/common
-    ../../modules/home-manager/starship
-    ../../modules/home-manager/tmux
-    ../../modules/home-manager/nushell
-    ../../modules/home-manager/fastfetch
+    inputs.self.modules.homeManager.common
+    inputs.self.modules.homeManager.starship
+    inputs.self.modules.homeManager.tmux
+    inputs.self.modules.homeManager.nushell
+    inputs.self.modules.homeManager.fastfetch
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -27,4 +27,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-}
+}; }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.nixos.gaming = {pkgs, ...}: {
   # Game mode
   programs.gamemode.enable = true;
 
@@ -23,4 +23,4 @@
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
   ];
-}
+}; }

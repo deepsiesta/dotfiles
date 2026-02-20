@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.homeManager.common = {pkgs, ...}: {
   programs = {
     git = {
       enable = true;
@@ -37,4 +37,4 @@
   # home.sessionVariables = {
   # EDITOR = "nvim"; # nixvim handles this
   # };
-}
+}; }

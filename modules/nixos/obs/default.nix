@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.nixos.obs = { pkgs, ... }: {
   programs.obs-studio = {
     enable = true;
     package = (
@@ -10,4 +10,4 @@
       obs-vkcapture
     ];
   };
-}
+}; }

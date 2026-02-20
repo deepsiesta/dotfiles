@@ -1,4 +1,4 @@
-{
+{ flake.modules.homeManager.emacs = {
   config,
   pkgs,
   ...
@@ -17,4 +17,4 @@
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/modules/home-manager/emacs/doom";
     recursive = true;
   };
-}
+}; }

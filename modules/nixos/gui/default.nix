@@ -1,4 +1,4 @@
-{
+{ flake.modules.nixos.gui = {
   pkgs,
   inputs,
   ...
@@ -41,4 +41,4 @@
     code-cursor-fhs
     cursor-cli
   ];
-}
+}; }

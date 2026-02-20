@@ -1,4 +1,4 @@
-{
+{ flake.modules.homeManager.nushell = {
   config,
   pkgs,
   ...
@@ -7,4 +7,4 @@
     enable = true;
     configFile.source = ./config.nu;
   };
-}
+}; }

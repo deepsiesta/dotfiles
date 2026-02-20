@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ flake.modules.homeManager.gui = {pkgs, ...}: {
   home.file = {
     ".local/share/thumbnailers/dds.thumbnailer".text = ''
       [Thumbnailer Entry]
@@ -47,4 +47,4 @@
   qt = {
     enable = true;
   };
-}
+}; }

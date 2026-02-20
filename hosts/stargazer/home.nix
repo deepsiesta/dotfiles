@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ flake.modules.homeManager.stargazer = { lib, inputs, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "siesta";
@@ -18,16 +18,16 @@
   # home.packages = [];
 
   imports = [
-    ../../modules/home-manager/common
-    ../../modules/home-manager/gui
-    ../../modules/home-manager/hyprland
-    ../../modules/home-manager/waybar
-    ../../modules/home-manager/fuzzel
-    ../../modules/home-manager/starship
-    ../../modules/home-manager/tmux
-    ../../modules/home-manager/nushell
-    ../../modules/home-manager/fastfetch
-    ../../modules/home-manager/stylix
+    inputs.self.modules.homeManager.common
+    inputs.self.modules.homeManager.gui
+    inputs.self.modules.homeManager.hyprland
+    inputs.self.modules.homeManager.waybar
+    inputs.self.modules.homeManager.fuzzel
+    inputs.self.modules.homeManager.starship
+    inputs.self.modules.homeManager.tmux
+    inputs.self.modules.homeManager.nushell
+    inputs.self.modules.homeManager.fastfetch
+    inputs.self.modules.homeManager.stylix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,4 +67,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-}
+}; }

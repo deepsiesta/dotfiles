@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{ flake.modules.nixos.stylix = { pkgs, inputs, ... }: {
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
+
   stylix = {
     enable = true;
 
@@ -47,4 +51,4 @@
     targets.nixvim.enable = false;
     targets.qt.enable = false;
   };
-}
+}; }
