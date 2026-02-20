@@ -32,8 +32,12 @@
     insync
     kdePackages.okular
     obsidian
+    # Codium
     vscodium-fhs
+    # Gemini
     antigravity-fhs
+    gemini-cli
+    # Cursor
     code-cursor-fhs
     cursor-cli
   ];
