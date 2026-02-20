@@ -51,4 +51,11 @@
     targets.nixvim.enable = false;
     targets.qt.enable = false;
   };
+}; 
+
+flake.modules.homeManager.stylix = { pkgs, ... }: {
+  stylix = {
+    targets.hyprlock.enable = false;
+    targets.waybar.enable = false;
+  };
 }; }
