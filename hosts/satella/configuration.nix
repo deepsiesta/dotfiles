@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./_hardware-configuration.nix
+    ./hardware-configuration.nix
     # Include the results of the hardware scan.
     inputs.self.modules.nixos.common
     inputs.self.modules.nixos.audio

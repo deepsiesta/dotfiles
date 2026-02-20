@@ -49,10 +49,17 @@
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-linux"];
 
-      imports = [
+      imports = let
+        inherit (inputs.nixpkgs.lib) hasSuffix hasInfix;
+        treeModules = inputs.import-tree.initFilter (path:
+          hasSuffix ".nix" path
+          && !hasInfix "/_" path
+          && !hasSuffix "/hardware-configuration.nix" path
+        );
+      in [
         inputs.flake-parts.flakeModules.modules
-        (inputs.import-tree ./modules)
-        (inputs.import-tree ./hosts)
+        (treeModules ./modules)
+        (treeModules ./hosts)
       ];
 
       flake.nixosConfigurations = {

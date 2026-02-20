@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./_hardware-configuration.nix
+    ./hardware-configuration.nix
     inputs.self.modules.nixos.common
     inputs.self.modules.nixos.audio
     inputs.self.modules.nixos.fonts

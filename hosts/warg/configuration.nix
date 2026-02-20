@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./_hardware-configuration.nix
+    ./hardware-configuration.nix
     inputs.self.modules.nixos.common
     inputs.home-manager.nixosModules.default
     inputs.self.modules.nixos.neovim
