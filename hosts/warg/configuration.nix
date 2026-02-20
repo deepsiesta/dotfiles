@@ -1,7 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{
+{ inputs, ... }: { flake.modules.nixos.warg = {
   config,
   lib,
   pkgs,
@@ -9,11 +6,10 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ../../modules/nixos/common
+    ./_hardware-configuration.nix
+    inputs.self.modules.nixos.common
     inputs.home-manager.nixosModules.default
-    ../../modules/nixos/neovim/nixvim.nix
+    inputs.self.modules.nixos.neovim
   ];
 
   # Firmware upgrades
@@ -50,7 +46,7 @@
     # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
     users = {
-      "siesta" = import ./home.nix;
+      "siesta" = inputs.self.modules.homeManager.warg;
     };
   };
 
@@ -93,4 +89,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-}
+}; }

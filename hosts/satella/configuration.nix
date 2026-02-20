@@ -1,7 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-{
+{ inputs, ... }: { flake.modules.nixos.satella = {
   config,
   lib,
   pkgs,
@@ -9,20 +6,21 @@
   ...
 }: {
   imports = [
+    ./_hardware-configuration.nix
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ../../modules/nixos/common
-    ../../modules/nixos/audio
-    ../../modules/nixos/fonts
-    ../../modules/nixos/sddm
-    ../../modules/nixos/gui
-    ../../modules/nixos/hyprland
-    ../../modules/nixos/stylix
-    ../../modules/nixos/gaming
-    ../../modules/nixos/slack
-    ../../modules/nixos/docker
+    inputs.self.modules.nixos.common
+    inputs.self.modules.nixos.audio
+    inputs.self.modules.nixos.fonts
+    inputs.self.modules.nixos.sddm
+    inputs.self.modules.nixos.gui
+    inputs.self.modules.nixos.hyprland
+    inputs.self.modules.nixos.stylix
+    inputs.self.modules.nixos.gaming
+    inputs.self.modules.nixos.slack
+    inputs.self.modules.nixos.docker
     inputs.home-manager.nixosModules.default
-    ../../modules/nixos/neovim/nixvim.nix
+    inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+    inputs.self.modules.nixos.neovim
   ];
 
   # Kernel
@@ -61,7 +59,7 @@
     # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
     users = {
-      "siesta" = import ./home.nix;
+      "siesta" = inputs.self.modules.homeManager.satella;
     };
   };
 
@@ -72,4 +70,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-}
+}; }
