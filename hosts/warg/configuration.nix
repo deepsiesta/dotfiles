@@ -1,92 +1,92 @@
-{ inputs, ... }: { flake.modules.nixos.warg = {
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [
-    ./hardware-configuration.nix
-    inputs.self.modules.nixos.common
-    inputs.home-manager.nixosModules.default
-    inputs.self.modules.nixos.neovim
-  ];
+{
+  flake.modules.nixos.warg = {
+    config,
+    lib,
+    pkgs,
+    inputs,
+    ...
+  }: {
+    imports = [
+      ./hardware-configuration.nix
+      inputs.self.modules.nixos.common
+      inputs.home-manager.nixosModules.default
+      inputs.self.modules.nixos.neovim
+    ];
 
-  # Firmware upgrades
-  hardware.enableRedistributableFirmware = false;
-  hardware.firmware = [pkgs.raspberrypiWirelessFirmware];
+    # Firmware upgrades
+    hardware.enableRedistributableFirmware = false;
+    hardware.firmware = [pkgs.raspberrypiWirelessFirmware];
 
-  # ZRAM
-  zramSwap.enable = true;
+    # ZRAM
+    zramSwap.enable = true;
 
-  # Swapfile
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 4 * 1024;
-    }
-  ];
+    # Swapfile
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 4 * 1024;
+      }
+    ];
 
-  # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+    # Enable flakes
+    nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
-  boot.loader.grub.enable = false;
-  # Enables the generation of /boot/extlinux/extlinux.conf
-  boot.loader.generic-extlinux-compatible.enable = true;
+    # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
+    boot.loader.grub.enable = false;
+    # Enables the generation of /boot/extlinux/extlinux.conf
+    boot.loader.generic-extlinux-compatible.enable = true;
 
-  networking.hostName = "warg"; # Define your hostname.
+    networking.hostName = "warg"; # Define your hostname.
 
-  # Prevent NetworkManager from pulling X/Wayland as a dependency
-  networking.networkmanager.plugins = lib.mkForce [];
+    # Prevent NetworkManager from pulling X/Wayland as a dependency
+    networking.networkmanager.plugins = lib.mkForce [];
 
-  home-manager = {
-    # Backup existing files
-    # backupFileExtension = "hm-backup";
-    # Pass inputs to home-manager modules
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "siesta" = inputs.self.modules.homeManager.warg;
+    home-manager = {
+      extraSpecialArgs = {inherit inputs;};
+      users = {
+        "siesta" = inputs.self.modules.homeManager.warg;
+      };
     };
+
+    # Use fish as default shell
+    programs.fish.enable = true;
+    users.defaultUserShell = pkgs.fish;
+
+    # Enable the OpenSSH daemon.
+    services.openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
+    };
+
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # networking.firewall.enable = false;
+
+    system.stateVersion = "24.05"; # Do not change this
   };
 
-  # Use fish as default shell
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  flake.modules.homeManager.warg = {inputs, ...}: {
+    # Home Manager needs a bit of information about you and the paths it should
+    # manage.
+    home.username = "siesta";
+    home.homeDirectory = "/home/siesta";
 
-  # List services that you want to enable:
+    home.stateVersion = "24.05"; # Do not change this
 
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
+    imports = [
+      inputs.self.modules.homeManager.common
+      inputs.self.modules.homeManager.starship
+      inputs.self.modules.homeManager.tmux
+      inputs.self.modules.homeManager.nushell
+      inputs.self.modules.homeManager.fastfetch
+    ];
+
+    # Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
   };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
-}; }
+}
