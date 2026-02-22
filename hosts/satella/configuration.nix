@@ -5,23 +5,31 @@
     pkgs,
     inputs,
     ...
-  }: {
+  }: let
+    modules = [
+      "common"
+      "audio"
+      "fonts"
+      "sddm"
+      "gui"
+      "hyprland"
+      "stylix"
+      "gaming"
+      "slack"
+      "docker"
+      "neovim"
+      "waybar"
+      "fuzzel"
+      "starship"
+      "tmux"
+      "nushell"
+      "fastfetch"
+    ];
+  in {
     imports = [
       ./hardware-configuration.nix
-      # Include the results of the hardware scan.
-      inputs.self.modules.nixos.common
-      inputs.self.modules.nixos.audio
-      inputs.self.modules.nixos.fonts
-      inputs.self.modules.nixos.sddm
-      inputs.self.modules.nixos.gui
-      inputs.self.modules.nixos.hyprland
-      inputs.self.modules.nixos.stylix
-      inputs.self.modules.nixos.gaming
-      inputs.self.modules.nixos.slack
-      inputs.self.modules.nixos.docker
-      inputs.home-manager.nixosModules.default
       inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-      inputs.self.modules.nixos.neovim
+      (inputs.self.lib.loadHostModules modules "siesta")
     ];
 
     # Kernel
@@ -55,60 +63,33 @@
     services.flatpak.enable = true;
 
     home-manager = {
-      # Backup existing files
-      # backupFileExtension = "hm-backup";
       # Pass inputs to home-manager modules
       extraSpecialArgs = {inherit inputs;};
-      users = {
-        "siesta" = inputs.self.modules.homeManager.satella;
+      users.siesta = {
+        home.username = "siesta";
+        home.homeDirectory = "/home/siesta";
+
+        wayland.windowManager.hyprland = {
+          settings = {
+            bindel = [
+              " , XF86MonBrightnessUp, exec, light -A 10"
+              " , XF86MonBrightnessDown, exec, light -U 10"
+            ];
+          };
+        };
+        programs.waybar = {
+          settings = {
+            mainBar = {
+              modules-right = lib.mkForce ["tray" "wireplumber" "battery" "clock"];
+            };
+          };
+        };
+
+        # Let Home Manager install and manage itself.
+        programs.home-manager.enable = true;
       };
     };
 
     system.stateVersion = "24.05"; # Do not change this
-  };
-
-  flake.modules.homeManager.satella = {
-    lib,
-    inputs,
-    ...
-  }: {
-    # Home Manager needs a bit of information about you and the paths it should
-    # manage.
-    home.username = "siesta";
-    home.homeDirectory = "/home/siesta";
-
-    home.stateVersion = "24.05"; # Do not change this
-
-    imports = [
-      inputs.self.modules.homeManager.common
-      inputs.self.modules.homeManager.gui
-      inputs.self.modules.homeManager.hyprland
-      inputs.self.modules.homeManager.waybar
-      inputs.self.modules.homeManager.fuzzel
-      inputs.self.modules.homeManager.starship
-      inputs.self.modules.homeManager.tmux
-      inputs.self.modules.homeManager.nushell
-      inputs.self.modules.homeManager.fastfetch
-      inputs.self.modules.homeManager.stylix
-    ];
-
-    wayland.windowManager.hyprland = {
-      settings = {
-        bindel = [
-          " , XF86MonBrightnessUp, exec, light -A 10"
-          " , XF86MonBrightnessDown, exec, light -U 10"
-        ];
-      };
-    };
-    programs.waybar = {
-      settings = {
-        mainBar = {
-          modules-right = lib.mkForce ["tray" "wireplumber" "battery" "clock"];
-        };
-      };
-    };
-
-    # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
   };
 }

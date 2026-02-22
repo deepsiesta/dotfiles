@@ -60,6 +60,7 @@
         inputs.flake-parts.flakeModules.modules
         (treeModules ./modules)
         (treeModules ./hosts)
+        (treeModules ./lib)
       ];
 
       flake.nixosConfigurations = {

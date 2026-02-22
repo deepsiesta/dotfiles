@@ -5,12 +5,19 @@
     pkgs,
     inputs,
     ...
-  }: {
+  }: let
+    modules = [
+      "common"
+      "neovim"
+      "starship"
+      "tmux"
+      "nushell"
+      "fastfetch"
+    ];
+  in {
     imports = [
       ./hardware-configuration.nix
-      inputs.self.modules.nixos.common
-      inputs.home-manager.nixosModules.default
-      inputs.self.modules.nixos.neovim
+      (inputs.self.lib.loadHostModules modules "siesta")
     ];
 
     # Firmware upgrades
@@ -43,8 +50,12 @@
 
     home-manager = {
       extraSpecialArgs = {inherit inputs;};
-      users = {
-        "siesta" = inputs.self.modules.homeManager.warg;
+      users.siesta = {
+        home.username = "siesta";
+        home.homeDirectory = "/home/siesta";
+
+        # Let Home Manager install and manage itself.
+        programs.home-manager.enable = true;
       };
     };
 
@@ -68,25 +79,5 @@
     # networking.firewall.enable = false;
 
     system.stateVersion = "24.05"; # Do not change this
-  };
-
-  flake.modules.homeManager.warg = {inputs, ...}: {
-    # Home Manager needs a bit of information about you and the paths it should
-    # manage.
-    home.username = "siesta";
-    home.homeDirectory = "/home/siesta";
-
-    home.stateVersion = "24.05"; # Do not change this
-
-    imports = [
-      inputs.self.modules.homeManager.common
-      inputs.self.modules.homeManager.starship
-      inputs.self.modules.homeManager.tmux
-      inputs.self.modules.homeManager.nushell
-      inputs.self.modules.homeManager.fastfetch
-    ];
-
-    # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
   };
 }
