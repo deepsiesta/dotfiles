@@ -48,17 +48,6 @@
     # Prevent NetworkManager from pulling X/Wayland as a dependency
     networking.networkmanager.plugins = lib.mkForce [];
 
-    home-manager = {
-      extraSpecialArgs = {inherit inputs;};
-      users.siesta = {
-        home.username = "siesta";
-        home.homeDirectory = "/home/siesta";
-
-        # Let Home Manager install and manage itself.
-        programs.home-manager.enable = true;
-      };
-    };
-
     # Use fish as default shell
     programs.fish.enable = true;
     users.defaultUserShell = pkgs.fish;

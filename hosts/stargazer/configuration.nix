@@ -1,7 +1,5 @@
 {
   flake.modules.nixos.stargazer = {
-    config,
-    lib,
     pkgs,
     inputs,
     ...
@@ -73,46 +71,36 @@
     # Flatpak
     services.flatpak.enable = true;
 
-    home-manager = {
-      # Pass inputs to home-manager modules
-      extraSpecialArgs = {inherit inputs;};
-      users.siesta = {
-        home.username = "siesta";
-        home.homeDirectory = "/home/siesta";
-
-        wayland.windowManager.hyprland = {
-          settings = {
-            monitor = [
-              "HDMI-A-1, 3840x2160@60, -1920x0, 2"
-              "DP-1, 2560x1440@144, 0x0, 1"
-            ];
-            workspace =
-              [
-                "special:scratchpad, name:scratchpad, monitor:DP-1"
-              ]
-              ++ (
-                # Bind odd workspaces to left screen, even workspaces to right screen
-                builtins.concatLists (builtins.genList (
-                    i: let
-                      wleft = 2 * i + 1;
-                      wright = 2 * i + 2;
-                    in [
-                      "${toString wleft}, monitor:HDMI-A-1"
-                      "${toString wright}, monitor:DP-1"
-                    ]
-                  )
-                  5) # Applies rules to workspaces 1 .. 10
-              );
-            exec-once = [
-              "uwsm app -- ckb-next --background"
-              "uwsm app -- solaar --window hide"
-              "uwsm app -- steam -silent"
-            ];
-          };
+    home-manager.users.siesta = {
+      wayland.windowManager.hyprland = {
+        settings = {
+          monitor = [
+            "HDMI-A-1, 3840x2160@60, -1920x0, 2"
+            "DP-1, 2560x1440@144, 0x0, 1"
+          ];
+          workspace =
+            [
+              "special:scratchpad, name:scratchpad, monitor:DP-1"
+            ]
+            ++ (
+              # Bind odd workspaces to left screen, even workspaces to right screen
+              builtins.concatLists (builtins.genList (
+                  i: let
+                    wleft = 2 * i + 1;
+                    wright = 2 * i + 2;
+                  in [
+                    "${toString wleft}, monitor:HDMI-A-1"
+                    "${toString wright}, monitor:DP-1"
+                  ]
+                )
+                5) # Applies rules to workspaces 1 .. 10
+            );
+          exec-once = [
+            "uwsm app -- ckb-next --background"
+            "uwsm app -- solaar --window hide"
+            "uwsm app -- steam -silent"
+          ];
         };
-
-        # Let Home Manager install and manage itself.
-        programs.home-manager.enable = true;
       };
     };
 

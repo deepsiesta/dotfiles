@@ -1,6 +1,5 @@
 {
   flake.modules.nixos.satella = {
-    config,
     lib,
     pkgs,
     inputs,
@@ -62,31 +61,21 @@
     # Flatpak
     services.flatpak.enable = true;
 
-    home-manager = {
-      # Pass inputs to home-manager modules
-      extraSpecialArgs = {inherit inputs;};
-      users.siesta = {
-        home.username = "siesta";
-        home.homeDirectory = "/home/siesta";
-
-        wayland.windowManager.hyprland = {
-          settings = {
-            bindel = [
-              " , XF86MonBrightnessUp, exec, light -A 10"
-              " , XF86MonBrightnessDown, exec, light -U 10"
-            ];
+    home-manager.users.siesta = {
+      wayland.windowManager.hyprland = {
+        settings = {
+          bindel = [
+            " , XF86MonBrightnessUp, exec, light -A 10"
+            " , XF86MonBrightnessDown, exec, light -U 10"
+          ];
+        };
+      };
+      programs.waybar = {
+        settings = {
+          mainBar = {
+            modules-right = lib.mkForce ["tray" "wireplumber" "battery" "clock"];
           };
         };
-        programs.waybar = {
-          settings = {
-            mainBar = {
-              modules-right = lib.mkForce ["tray" "wireplumber" "battery" "clock"];
-            };
-          };
-        };
-
-        # Let Home Manager install and manage itself.
-        programs.home-manager.enable = true;
       };
     };
 

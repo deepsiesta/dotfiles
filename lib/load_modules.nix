@@ -11,15 +11,23 @@
                 inputs.home-manager.nixosModules.home-manager
               ];
 
-              home-manager.users.${username}.imports =
-                [
-                  (
-                    {osConfig, ...}: {
-                      home.stateVersion = osConfig.system.stateVersion;
-                    }
-                  )
-                ]
-                ++ map (module: inputs.self.modules.homeManager.${module} or {}) modules;
+              home-manager = {
+                extraSpecialArgs = {inherit inputs;};
+                users.${username} = {
+                  home.username = username;
+                  home.homeDirectory = "/home/${username}";
+                  programs.home-manager.enable = true;
+                  imports =
+                    [
+                      (
+                        {osConfig, ...}: {
+                          home.stateVersion = osConfig.system.stateVersion;
+                        }
+                      )
+                    ]
+                    ++ map (module: inputs.self.modules.homeManager.${module} or {}) modules;
+                };
+              };
             }
           ];
       };
