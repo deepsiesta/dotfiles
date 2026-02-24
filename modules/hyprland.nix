@@ -7,24 +7,17 @@
     withUWSM = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
   security.pam.services.hyprlock = {};
 
+  services.displayManager.defaultSession = "hyprland-uwsm";
+
   environment.systemPackages = with pkgs; [
-    pwvucontrol
     hyprpicker
     hyprshot
-    wl-clipboard
-    waybar
     networkmanagerapplet
-    fuzzel
   ];
 };
 
@@ -171,8 +164,6 @@ flake.modules.homeManager.hyprland = {
       ];
     };
   };
-
-  services.hyprpaper.enable = true;
 
   programs.hyprlock = {
     enable = true;

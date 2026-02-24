@@ -15,6 +15,8 @@
 
   environment.systemPackages = with pkgs; [
     protonplus
+    (lutris.override {extraPkgs = pkgs: [winetricks];})
+    (bottles.override {removeWarningPopup = true;})
     # Gstreamer
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
