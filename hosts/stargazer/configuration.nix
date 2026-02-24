@@ -26,7 +26,6 @@
       "nvidia"
       "cuda"
       "neovim"
-      "fuzzel"
       "starship"
       "tmux"
       "nushell"

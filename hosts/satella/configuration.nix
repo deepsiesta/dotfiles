@@ -24,7 +24,6 @@
       "slack"
       "docker"
       "neovim"
-      "fuzzel"
       "starship"
       "tmux"
       "nushell"
