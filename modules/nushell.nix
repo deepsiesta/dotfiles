@@ -23,6 +23,9 @@
           } | do $in $spans
         }
 
+        # Allow nonfree packages with nix run --impure
+        $env.NIXPKGS_ALLOW_UNFREE = "1"
+
         # Make tree show colored output
         $env.CLICOLOR = 1
 
