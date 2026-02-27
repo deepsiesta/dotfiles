@@ -19,10 +19,10 @@ jobs:
             accept-flake-config = true
 
       - name: Setup Nix Cache
-        uses: nix-community/cache-nix-action@v5
+        uses: nix-community/cache-nix-action@v11
         with:
           # Use a unique key for the cache
-          primary_key: nix-cache-${{ runner.os }}-${{ hashFiles('flake.lock') }}
+          primary-key: nix-cache-${{ runner.os }}-${{ hashFiles('flake.lock') }}
           restore_prefixes_first_match: nix-cache-${{ runner.os }}-
           gc-max-store-size-linux: 1G
 
