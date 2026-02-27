@@ -12,14 +12,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v30
+        uses: cachix/install-nix-action@v31
         with:
           # This will allow the action to use the substituters defined in your flake.nix
           extra_nix_config: |
             accept-flake-config = true
 
       - name: Setup Nix Cache
-        uses: nix-community/cache-nix-action@v11
+        uses: nix-community/cache-nix-action@v7
         with:
           # Use a unique key for the cache
           primary-key: nix-cache-${{ runner.os }}-${{ hashFiles('flake.lock') }}
