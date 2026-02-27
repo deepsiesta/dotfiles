@@ -40,40 +40,59 @@
       url = "github:ezKEA/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: {
-    nixosConfigurations.stargazer = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/stargazer/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.stylix.nixosModules.stylix
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux" "aarch64-linux"];
+
+      imports = let
+        inherit (inputs.nixpkgs.lib) hasSuffix hasInfix;
+        treeModules = inputs.import-tree.initFilter (
+          path:
+            hasSuffix ".nix" path
+            && !hasInfix "/_" path
+            && !hasSuffix "/hardware-configuration.nix" path
+        );
+      in [
+        inputs.flake-parts.flakeModules.modules
+        inputs.treefmt-nix.flakeModule
+        (treeModules ./modules)
+        (treeModules ./hosts)
+        (treeModules ./lib)
       ];
+
+      perSystem = {config, ...}: {
+        treefmt.config = {
+          projectRootFile = "flake.nix";
+          programs.alejandra.enable = true;
+          programs.deadnix.enable = true;
+          programs.statix.enable = true;
+        };
+        formatter = config.treefmt.build.wrapper;
+      };
+
+      flake.nixosConfigurations = {
+        stargazer = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [inputs.self.modules.nixos.stargazer];
+        };
+        kanami = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [inputs.self.modules.nixos.kanami];
+        };
+        satella = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [inputs.self.modules.nixos.satella];
+        };
+        warg = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [inputs.self.modules.nixos.warg];
+        };
+      };
     };
-    nixosConfigurations.kanami = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/kanami/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.stylix.nixosModules.stylix
-      ];
-    };
-    nixosConfigurations.satella = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/satella/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-        inputs.stylix.nixosModules.stylix
-      ];
-    };
-    nixosConfigurations.warg = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/warg/configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
-    };
-  };
 }
