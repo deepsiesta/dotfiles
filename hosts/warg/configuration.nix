@@ -1,6 +1,5 @@
 {
   flake.modules.nixos.warg = {
-    config,
     lib,
     pkgs,
     inputs,

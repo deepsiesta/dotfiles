@@ -43,6 +43,7 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs = inputs:
@@ -51,17 +52,28 @@
 
       imports = let
         inherit (inputs.nixpkgs.lib) hasSuffix hasInfix;
-        treeModules = inputs.import-tree.initFilter (path:
-          hasSuffix ".nix" path
-          && !hasInfix "/_" path
-          && !hasSuffix "/hardware-configuration.nix" path
+        treeModules = inputs.import-tree.initFilter (
+          path:
+            hasSuffix ".nix" path
+            && !hasInfix "/_" path
+            && !hasSuffix "/hardware-configuration.nix" path
         );
       in [
         inputs.flake-parts.flakeModules.modules
+        inputs.treefmt-nix.flakeModule
         (treeModules ./modules)
         (treeModules ./hosts)
         (treeModules ./lib)
       ];
+
+      perSystem = _: {
+        treefmt.config = {
+          projectRootFile = "flake.nix";
+          programs.alejandra.enable = true;
+          programs.deadnix.enable = true;
+          programs.statix.enable = true;
+        };
+      };
 
       flake.nixosConfigurations = {
         stargazer = inputs.nixpkgs.lib.nixosSystem {

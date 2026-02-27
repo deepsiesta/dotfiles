@@ -37,12 +37,23 @@
           "hyprland/workspaces" = {
             disable-scroll = true;
             persistent_workspaces = {
-              "1" = []; "2" = []; "3" = []; "4" = []; "5" = [];
-              "6" = []; "7" = []; "8" = []; "9" = []; "0" = [];
+              "1" = [];
+              "2" = [];
+              "3" = [];
+              "4" = [];
+              "5" = [];
+              "6" = [];
+              "7" = [];
+              "8" = [];
+              "9" = [];
+              "0" = [];
             };
           };
 
-          "tray" = { icon-size = 16; spacing = 10; };
+          "tray" = {
+            icon-size = 16;
+            spacing = 10;
+          };
 
           "wireplumber" = {
             format = "{icon}";
@@ -55,7 +66,10 @@
 
           "battery" = {
             interval = 60;
-            states = { warning = 30; critical = 10; };
+            states = {
+              warning = 30;
+              critical = 10;
+            };
             format = "{capacity}% {icon}";
             format-icons = ["" "" "" "" ""];
             max-length = 25;
@@ -67,56 +81,60 @@
           };
         };
       };
-      style = /* CSS */ ''
-        * {
-          border: none;
-          border-radius: 0;
-          padding: 0;
-          margin: 0;
-          font-size: 14px;
-          font-weight: bold;
-        }
+      style =
+        /*
+        CSS
+        */
+        ''
+          * {
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+          }
 
-        window#waybar {
-          background: rgba(10, 10, 10, 0.4);
-          color: #ffffff;
-        }
+          window#waybar {
+            background: rgba(10, 10, 10, 0.4);
+            color: #ffffff;
+          }
 
-        #window {
-          margin-left: 15px;
-        }
+          #window {
+            margin-left: 15px;
+          }
 
-        #workspaces button {
-          font-size: 16px;
-          margin-right: 10px;
-          color: #ffffff;
-        }
+          #workspaces button {
+            font-size: 16px;
+            margin-right: 10px;
+            color: #ffffff;
+          }
 
-        #workspaces button.hover {
-          background-color: rgba(20, 20, 60, 0.6);
-          /* color: #ffffff; */
-        }
+          #workspaces button.hover {
+            background-color: rgba(20, 20, 60, 0.6);
+            /* color: #ffffff; */
+          }
 
-        #workspaces button.active {
-          color: #FFA328;
-        }
+          #workspaces button.active {
+            color: #FFA328;
+          }
 
-        #tray {
-          margin-right: 15px;
-        }
+          #tray {
+            margin-right: 15px;
+          }
 
-        #wireplumber {
-          margin-right: 15px;
-        }
+          #wireplumber {
+            margin-right: 15px;
+          }
 
-        #battery {
-          margin-right: 15px;
-        }
+          #battery {
+            margin-right: 15px;
+          }
 
-        #clock {
-          margin-right: 15px;
-        }
-      '';
+          #clock {
+            margin-right: 15px;
+          }
+        '';
     };
 
     services.xembed-sni-proxy.enable = true;
