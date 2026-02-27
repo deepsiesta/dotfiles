@@ -66,13 +66,14 @@
         (treeModules ./lib)
       ];
 
-      perSystem = _: {
+      perSystem = {config, ...}: {
         treefmt.config = {
           projectRootFile = "flake.nix";
           programs.alejandra.enable = true;
           programs.deadnix.enable = true;
           programs.statix.enable = true;
         };
+        formatter = config.treefmt.build.wrapper;
       };
 
       flake.nixosConfigurations = {
