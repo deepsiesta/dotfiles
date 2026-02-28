@@ -5,6 +5,7 @@
       mpv
       syncplay
       spotify
+      spotify-player
     ];
   };
 }

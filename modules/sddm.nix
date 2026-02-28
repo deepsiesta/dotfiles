@@ -13,7 +13,10 @@
     services.displayManager = {
       sddm = {
         enable = true;
-        wayland.enable = true;
+        wayland = {
+          enable = true;
+          compositor = "kwin";
+        };
         package = pkgs.kdePackages.sddm; # Use Qt6
         theme = "sddm-astronaut-theme";
         extraPackages = [sddm-astronaut];
