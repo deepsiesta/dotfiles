@@ -23,8 +23,8 @@ jobs:
         with:
           # Use a unique key for the cache
           primary-key: nix-cache-${{ runner.os }}-${{ hashFiles('flake.lock') }}
-          restore_prefixes_first_match: nix-cache-${{ runner.os }}-
-          gc-max-store-size-linux: 1G
+          restore-prefixes-first-match: nix-cache-${{ runner.os }}-
+          gc-max-store-size-linux: 2G
 
       - name: Check flake
         run: nix flake check
