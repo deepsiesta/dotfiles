@@ -29,6 +29,9 @@
           # Make tree show colored output
           $env.CLICOLOR = 1
 
+          # Remove rounded corners
+          $env.config.table.mode = "thin"
+
           $env.config = {
             show_banner: false
             completions: {
