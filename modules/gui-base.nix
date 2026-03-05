@@ -82,9 +82,7 @@
         };
       };
       style =
-        /*
-        CSS
-        */
+        # CSS
         ''
           * {
             border: none;
