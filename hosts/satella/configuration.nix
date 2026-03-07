@@ -58,7 +58,7 @@
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Brightness control
-    programs.light.enable = true;
+    environment.systemPackages = [ pkgs.brightnessctl ];
 
     # Enable OpenGL
     hardware.graphics.enable = true;
@@ -70,8 +70,8 @@
       wayland.windowManager.hyprland = {
         settings = {
           bindel = [
-            " , XF86MonBrightnessUp, exec, light -A 10"
-            " , XF86MonBrightnessDown, exec, light -U 10"
+            " , XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+            " , XF86MonBrightnessDown, exec, brightnessctl set 10%-"
           ];
         };
       };
