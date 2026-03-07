@@ -58,7 +58,7 @@
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Brightness control
-    environment.systemPackages = [ pkgs.brightnessctl ];
+    environment.systemPackages = [pkgs.brightnessctl];
 
     # Enable OpenGL
     hardware.graphics.enable = true;
