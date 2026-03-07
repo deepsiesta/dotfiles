@@ -22,7 +22,7 @@
       "stylix"
       "gaming"
       "slack"
-      "docker"
+      "podman"
       "neovim"
       "starship"
       "tmux"
