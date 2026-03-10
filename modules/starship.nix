@@ -25,7 +25,7 @@
           vimcmd_symbol = "[❮](purple)";
         };
         git_branch = {
-          format = "[$branch]($style)";
+          format = "[ $branch]($style) ";
           style = "bright-black";
         };
         git_status = {
@@ -49,11 +49,11 @@
         };
         nix_shell = {
           impure_msg = "[impure](bold red)";
-          format = "[$state $name]($style) ";
+          format = "[$state  $name]($style) ";
           style = "cyan";
         };
         python = {
-          format = "[$virtualenv]($style) ";
+          format = "[ $virtualenv]($style) ";
           style = "bright-black";
         };
       };
