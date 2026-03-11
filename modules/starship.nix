@@ -48,8 +48,7 @@
           style = "yellow";
         };
         nix_shell = {
-          impure_msg = "[impure](bold red)";
-          format = "[$state  $name]($style) ";
+          format = "[󱄅 $name]($style) ";
           style = "cyan";
         };
         python = {
