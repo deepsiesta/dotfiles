@@ -1,8 +1,14 @@
 {
-  flake.modules.nixos.cursor = {pkgs, ...}: {
+  flake.modules.nixos.cursor = {
+    pkgs,
+    inputs,
+    ...
+  }: {
+    nixpkgs.overlays = [inputs.llm-agents.overlays.default];
+
     environment.systemPackages = with pkgs; [
       code-cursor-fhs
-      cursor-cli
+      llm-agents.cursor-agent
     ];
   };
 }
