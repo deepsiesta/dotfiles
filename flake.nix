@@ -34,7 +34,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvim.url = "github:deepsiesta/nvim";
+    nvim = {
+      url = "github:deepsiesta/nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     aagl = {
       url = "github:ezKEA/aagl-gtk-on-nix";
