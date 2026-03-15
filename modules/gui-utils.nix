@@ -37,7 +37,7 @@
         window_alert_on_bell = "no";
       };
       keybindings = {
-        "ctrl+shift+p>p" = "change_font_size all 20.0";
+        "ctrl+shift+p>p" = "change_font_size all 18.0";
         "ctrl+shift+p>o" = "change_font_size all 0";
       };
       shellIntegration.enableFishIntegration = true;
