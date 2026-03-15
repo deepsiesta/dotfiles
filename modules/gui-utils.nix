@@ -28,6 +28,14 @@
       TerminalEmulatorDismissed=true
     '';
 
+    xdg.configFile."kitty/quick-access-terminal.conf".text = ''
+      lines 32
+      edge top
+      hide_on_focus_loss yes
+      kitty_override window_padding_width 20
+      background_opacity 0.7
+    '';
+
     programs.kitty = {
       enable = true;
       settings = {

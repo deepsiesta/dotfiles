@@ -66,7 +66,7 @@
             "windowsOut, 1, 3, md3_accel, popin 60%"
             "fade, 1, 3, md3_decel"
             "workspaces, 1, 5, menu_decel, slide"
-            "specialWorkspace, 1, 3, default, slidefadevert -80%"
+            "layers, 1, 2, md3_decel, slide"
           ];
         };
         dwindle = {
@@ -79,6 +79,10 @@
           disable_hyprland_logo = true;
           disable_splash_rendering = true;
         };
+        layerrule = [
+          "animation slidefadevert -90%, match:namespace ^(kitty-quick-access)$"
+          "no_anim on, match:namespace ^(launcher)$"
+        ];
         xwayland.force_zero_scaling = true;
         # Keybinds
         "$mod" = "Super";
@@ -106,8 +110,8 @@
             "$mod, F, fullscreen, 0"
             # Toggle floating
             "$mod+Alt, Space, togglefloating,"
-            # Special workspace
-            "$mod, grave, togglespecialworkspace, scratchpad"
+            # Quick access terminal
+            "$mod, grave, exec, uwsm-app -- kitten quick-access-terminal"
             # Kill active window
             "$mod, Q, killactive"
             # Kill window clicked on (xkill equivalent)
@@ -157,7 +161,6 @@
           "uwsm app -- nm-applet --indicator &"
           "hyprctl setcursor Bibata-Modern-Classic 24"
           "uwsm app -- discord --enable-features=UseOzonePlatform --ozone-platform=wayland --start-minimized"
-          "[workspace special:scratchpad silent] uwsm app -- kitty"
         ];
       };
     };

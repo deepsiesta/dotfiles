@@ -83,12 +83,8 @@
             "HDMI-A-1, 3840x2160@60, -1920x0, 2"
             "DP-1, 2560x1440@144, 0x0, 1"
           ];
-          workspace =
-            [
-              "special:scratchpad, name:scratchpad, monitor:DP-1"
-            ]
-            ++ (
-              # Bind odd workspaces to left screen, even workspaces to right screen
+          workspace = (
+            # Bind odd workspaces to left screen, even workspaces to right screen
               builtins.concatLists (builtins.genList (
                   i: let
                     wleft = 2 * i + 1;
