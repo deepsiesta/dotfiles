@@ -83,19 +83,16 @@
             "HDMI-A-1, 3840x2160@60, -1920x0, 2"
             "DP-1, 2560x1440@144, 0x0, 1"
           ];
-          workspace = (
-            # Bind odd workspaces to left screen, even workspaces to right screen
-              builtins.concatLists (builtins.genList (
-                  i: let
-                    wleft = 2 * i + 1;
-                    wright = 2 * i + 2;
-                  in [
-                    "${toString wleft}, monitor:HDMI-A-1"
-                    "${toString wright}, monitor:DP-1"
-                  ]
-                )
-                5) # Applies rules to workspaces 1 .. 10
-            );
+          workspace = builtins.concatLists (builtins.genList (
+              i: let
+                wleft = 2 * i + 1;
+                wright = 2 * i + 2;
+              in [
+                "${toString wleft}, monitor:HDMI-A-1"
+                "${toString wright}, monitor:DP-1"
+              ]
+            )
+            5);
           exec-once = [
             "uwsm app -- ckb-next --background"
             "uwsm app -- solaar --window hide"
