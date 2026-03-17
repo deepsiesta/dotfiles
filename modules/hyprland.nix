@@ -66,7 +66,7 @@
             "windowsOut, 1, 3, md3_accel, popin 60%"
             "fade, 1, 3, md3_decel"
             "workspaces, 1, 5, menu_decel, slide"
-            "layers, 1, 2, md3_decel, slide"
+            "layers, 1, 2, md3_decel"
           ];
         };
         dwindle = {
@@ -81,7 +81,6 @@
         };
         layerrule = [
           "animation slidefadevert -90%, match:namespace ^(kitty-quick-access)$"
-          "no_anim on, match:namespace ^(launcher)$"
         ];
         xwayland.force_zero_scaling = true;
         # Keybinds
