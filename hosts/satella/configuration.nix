@@ -1,6 +1,5 @@
 {
   flake.modules.nixos.satella = {
-    lib,
     pkgs,
     inputs,
     ...
@@ -67,6 +66,7 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
+      gui.waybar.type = "laptop";
       device.monitors = [
         {
           name = "eDP-1";
@@ -83,13 +83,6 @@
             " , XF86MonBrightnessUp, exec, brightnessctl set 10%+"
             " , XF86MonBrightnessDown, exec, brightnessctl set 10%-"
           ];
-        };
-      };
-      programs.waybar = {
-        settings = {
-          mainBar = {
-            modules-right = lib.mkForce ["tray" "wireplumber" "battery" "clock"];
-          };
         };
       };
     };
