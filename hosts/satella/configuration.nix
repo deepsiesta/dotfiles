@@ -67,6 +67,15 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
+      device.monitors = [
+        {
+          name = "eDP-1";
+          width = 2880;
+          height = 1920;
+          refresh = 120;
+          scale = 2;
+        }
+      ];
       terminal.quickAccessLines = 20;
       wayland.windowManager.hyprland = {
         settings = {

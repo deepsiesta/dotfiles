@@ -61,11 +61,17 @@
     hardware.nvidia.open = lib.mkForce false;
 
     home-manager.users.siesta = {
+      device.monitors = [
+        {
+          name = "DP-1";
+          width = 2560;
+          height = 1440;
+          refresh = 144;
+          scale = 1;
+        }
+      ];
       wayland.windowManager.hyprland = {
         settings = {
-          monitor = [
-            "DP-1, 2560x1440@144, 0x0, 1"
-          ];
           input = {
             numlock_by_default = lib.mkForce false;
           };

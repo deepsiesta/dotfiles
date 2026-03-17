@@ -77,12 +77,25 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
+      device.monitors = [
+        {
+          name = "HDMI-A-1";
+          width = 3840;
+          height = 2160;
+          refresh = 60;
+          x = -1920;
+          scale = 2;
+        }
+        {
+          name = "DP-1";
+          width = 2560;
+          height = 1440;
+          refresh = 144;
+          scale = 1;
+        }
+      ];
       wayland.windowManager.hyprland = {
         settings = {
-          monitor = [
-            "HDMI-A-1, 3840x2160@60, -1920x0, 2"
-            "DP-1, 2560x1440@144, 0x0, 1"
-          ];
           workspace = builtins.concatLists (builtins.genList (
               i: let
                 wleft = 2 * i + 1;
