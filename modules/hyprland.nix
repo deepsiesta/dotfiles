@@ -27,7 +27,7 @@
     config,
     ...
   }: {
-    options.device.monitors = lib.mkOption {
+    options.host.monitors = lib.mkOption {
       type = lib.types.listOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
@@ -74,7 +74,7 @@
             map (
               m: "${m.name}, ${toString m.width}x${toString m.height}@${toString m.refresh}, ${toString m.x}x${toString m.y}, ${toString m.scale}"
             )
-            config.device.monitors;
+            config.host.monitors;
           general = {
             gaps_in = 4;
             gaps_out = 8;

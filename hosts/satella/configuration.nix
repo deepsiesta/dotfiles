@@ -66,8 +66,8 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
-      gui.waybar.type = "laptop";
-      device.monitors = [
+      host.waybar.type = "laptop";
+      host.monitors = [
         {
           name = "eDP-1";
           width = 2880;
@@ -76,7 +76,7 @@
           scale = 2;
         }
       ];
-      terminal.quickAccessLines = 20;
+      host.terminal.quickAccessLines = 20;
       wayland.windowManager.hyprland = {
         settings = {
           bindel = [

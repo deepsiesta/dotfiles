@@ -19,7 +19,7 @@
     config,
     ...
   }: {
-    options.gui.waybar.type = lib.mkOption {
+    options.host.waybar.type = lib.mkOption {
       type = lib.types.enum ["desktop" "laptop"];
       default = "desktop";
       description = "Type of machine for Waybar configuration";
@@ -37,7 +37,7 @@
             modules-center = ["hyprland/workspaces"];
             modules-right =
               ["tray" "wireplumber"]
-              ++ (lib.optionals (config.gui.waybar.type == "laptop") ["battery"])
+              ++ (lib.optionals (config.host.waybar.type == "laptop") ["battery"])
               ++ ["clock"];
 
             "hyprland/window" = {

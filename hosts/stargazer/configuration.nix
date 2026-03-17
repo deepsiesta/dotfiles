@@ -77,7 +77,7 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
-      device.monitors = [
+      host.monitors = [
         {
           name = "HDMI-A-1";
           width = 3840;

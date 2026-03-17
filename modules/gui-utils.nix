@@ -20,7 +20,7 @@
     config,
     ...
   }: {
-    options.terminal.quickAccessLines = lib.mkOption {
+    options.host.terminal.quickAccessLines = lib.mkOption {
       type = lib.types.int;
       default = 32;
       description = "Number of lines for the quick access terminal";
@@ -41,7 +41,7 @@
       '';
 
       xdg.configFile."kitty/quick-access-terminal.conf".text = ''
-        lines ${toString config.terminal.quickAccessLines}
+        lines ${toString config.host.terminal.quickAccessLines}
         edge top
         hide_on_focus_loss yes
         kitty_override window_padding_width 20

@@ -58,10 +58,10 @@
     services.flatpak.enable = true;
 
     # Old GPUs cannot use the open kernel module
-    hardware.nvidia.open = lib.mkForce false;
+    host.nvidia.legacy = true;
 
     home-manager.users.siesta = {
-      device.monitors = [
+      host.monitors = [
         {
           name = "DP-1";
           width = 2560;
