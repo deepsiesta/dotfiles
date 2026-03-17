@@ -45,7 +45,7 @@
         edge top
         hide_on_focus_loss yes
         kitty_override window_padding_width 20
-        background_opacity 0.7
+        background_opacity 0.8
       '';
 
       programs.kitty = {
