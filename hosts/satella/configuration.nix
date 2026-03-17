@@ -67,6 +67,7 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
+      terminal.quickAccessLines = 20;
       wayland.windowManager.hyprland = {
         settings = {
           bindel = [
