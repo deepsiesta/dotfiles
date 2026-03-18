@@ -30,6 +30,8 @@
           # Remove rounded corners
           $env.config.table.mode = "thin"
 
+          alias , = comma
+
           $env.config = {
             show_banner: false
             completions: {

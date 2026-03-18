@@ -46,6 +46,11 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     treefmt-nix.url = "github:numtide/treefmt-nix";

@@ -1,5 +1,10 @@
 {
-  flake.modules.nixos.common = {pkgs, ...}: {
+  flake.modules.nixos.common = {
+    pkgs,
+    inputs,
+    ...
+  }: {
+    imports = [inputs.nix-index-database.nixosModules.nix-index];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
@@ -51,6 +56,8 @@
       binfmt = true;
     };
 
+    programs.nix-index-database.comma.enable = true;
+
     environment.systemPackages = with pkgs; [
       vim
       wget
@@ -76,7 +83,12 @@
     };
   };
 
-  flake.modules.homeManager.common = {pkgs, ...}: {
+  flake.modules.homeManager.common = {
+    pkgs,
+    inputs,
+    ...
+  }: {
+    imports = [inputs.nix-index-database.homeModules.nix-index];
     programs = {
       git = {
         enable = true;
@@ -101,6 +113,10 @@
         nix-direnv.enable = true;
       };
       bash.enable = true;
+
+      nix-index.enable = true;
+      nix-index-database.comma.enable = true;
+
       fish = {
         enable = true;
         interactiveShellInit = ''
