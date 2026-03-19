@@ -16,7 +16,6 @@
       "productivity"
       "development"
       "gemini"
-      "cursor"
       "hyprland"
       "stylix"
       "gaming"
