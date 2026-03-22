@@ -127,7 +127,10 @@
             disable_splash_rendering = true;
           };
           layerrule = [
-            "animation slidefadevert -90%, match:namespace ^(kitty-quick-access)$"
+            "match:namespace ^(kitty-quick-access)$, animation slidefadevert -90%"
+          ];
+          windowrule = [
+            "match:class ^(xdg-desktop-portal-.*)$, float 1"
           ];
           xwayland.force_zero_scaling = true;
           # Keybinds
