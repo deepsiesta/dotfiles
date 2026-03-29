@@ -93,6 +93,7 @@
       git = {
         enable = true;
         lfs.enable = true;
+        signing.format = "openpgp";
         settings = {
           user.name = "Siesta";
           user.email = "20047950+deepsiesta@users.noreply.github.com";
