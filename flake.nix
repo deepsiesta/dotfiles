@@ -51,6 +51,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    comfyui-nix.url = "github:utensils/comfyui-nix";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     treefmt-nix.url = "github:numtide/treefmt-nix";
