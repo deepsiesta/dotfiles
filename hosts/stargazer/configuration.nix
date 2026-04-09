@@ -24,7 +24,6 @@
       "podman"
       "nvidia"
       "cuda"
-      "comfyui"
       "neovim"
       "starship"
       "tmux"
