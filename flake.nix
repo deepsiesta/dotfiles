@@ -77,6 +77,7 @@
         inputs.flake-parts.flakeModules.modules
         inputs.treefmt-nix.flakeModule
         (treeModules ./modules)
+        (treeModules ./overlays)
         (treeModules ./hosts)
         (treeModules ./lib)
       ];
