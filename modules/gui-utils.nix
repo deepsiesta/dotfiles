@@ -11,6 +11,7 @@
       gimp3
       qbittorrent
       insync
+      ffmpegthumbnailer
     ];
   };
 
