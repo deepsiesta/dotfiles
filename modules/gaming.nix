@@ -25,6 +25,7 @@
       protonplus
       (lutris.override {extraPkgs = _pkgs: [winetricks];})
       (bottles.override {removeWarningPopup = true;})
+      faugus-launcher
       # Gstreamer
       gst_all_1.gstreamer
       gst_all_1.gst-plugins-base
