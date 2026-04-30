@@ -5,7 +5,7 @@
     ...
   }: {
     # TODO: Remove the overlay once openldap is fixed upstream
-    # imports = [inputs.self.modules.nixos.openldap];
+    imports = [inputs.self.modules.nixos.openldap];
 
     # Game mode
     programs.gamemode.enable = true;
