@@ -42,7 +42,7 @@
         # Optionally, you may need to select the appropriate driver version for your specific GPU.
         package =
           if config.host.nvidia.legacy
-          then config.boot.kernelPackages.nvidiaPackages.stable
+          then config.boot.kernelPackages.nvidiaPackages.legacy_470
           else config.boot.kernelPackages.nvidiaPackages.production;
       };
     };

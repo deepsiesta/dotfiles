@@ -21,7 +21,7 @@
       "hyprland"
       "stylix"
       "gaming"
-      # "nvidia"
+      "nvidia"
       "neovim"
       "starship"
       "tmux"
