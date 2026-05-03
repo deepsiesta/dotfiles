@@ -1,6 +1,5 @@
 {
   flake.modules.nixos.kanami = {
-    config,
     pkgs,
     inputs,
     lib,
@@ -21,7 +20,7 @@
       "hyprland"
       "stylix"
       "gaming"
-      "nvidia"
+      # "nvidia"
       "neovim"
       "starship"
       "tmux"
@@ -35,7 +34,7 @@
     ];
 
     # Kernel
-    boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12; # Last LTS version with working wifi driver
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     hardware.cpu.intel.updateMicrocode = true;
 
     # Bootloader.
@@ -54,12 +53,7 @@
 
     # Required by wireless card
     hardware.usb-modeswitch.enable = true;
-    boot.initrd.kernelModules = ["8852au"];
-    boot.extraModulePackages = [
-      config.boot.kernelPackages.rtl8852au
-      config.boot.kernelPackages.rtl8852bu
-    ];
-    # environment.systemPackages = [pkgs.linuxKernel.packages.linux_5_15.rtw89];
+    boot.initrd.kernelModules = ["rtw89_8852au"];
     services.udev.extraRules =
       # Switch card from storage mode to WiFi mode.
       ''
@@ -74,6 +68,7 @@
 
     # Old GPUs cannot use the open kernel module
     # host.nvidia.legacy = true;
+    # nixpkgs.config.nvidia.acceptLicense = true;
 
     home-manager.users.siesta = {
       host.monitors = [
