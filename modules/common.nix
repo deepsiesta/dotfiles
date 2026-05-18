@@ -11,6 +11,9 @@
     # Add trusted users for substituters
     nix.settings.trusted-users = ["root" "@wheel"];
 
+    # Use Lix
+    nix.package = pkgs.lixPackageSets.stable.lix;
+
     # Nix store optimization
     nix.settings.auto-optimise-store = true;
 

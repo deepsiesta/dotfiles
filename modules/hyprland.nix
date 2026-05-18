@@ -63,10 +63,10 @@
       default = [];
       description = "List of monitors to configure";
     };
-
     config = {
       wayland.windowManager.hyprland = {
         enable = true;
+        configType = "hyprlang";
         systemd.enable = false;
         settings = {
           "$col_active" = "0xFF30C0F0";
