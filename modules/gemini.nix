@@ -7,8 +7,7 @@
     nixpkgs.overlays = [inputs.llm-agents.overlays.default];
 
     environment.systemPackages = with pkgs; [
-      antigravity-fhs
-      llm-agents.gemini-cli
+      llm-agents.antigravity
     ];
   };
 }
