@@ -7,7 +7,7 @@
     nixpkgs.overlays = [inputs.llm-agents.overlays.default];
 
     environment.systemPackages = with pkgs; [
-      llm-agents.antigravity
+      llm-agents.antigravity-cli
     ];
   };
 }
