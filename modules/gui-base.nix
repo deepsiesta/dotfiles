@@ -156,7 +156,6 @@
 
       gtk = {
         enable = true;
-        gtk4.theme = config.gtk.theme;
         iconTheme = {
           name = "Sweet-Rainbow";
           package = pkgs.sweet-folders;

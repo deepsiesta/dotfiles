@@ -1,6 +1,14 @@
 {
-  flake.modules.nixos.gui-utils = {pkgs, ...}: {
+  flake.modules.nixos.gui-utils = {
+    pkgs,
+    inputs,
+    ...
+  }: {
     programs.firefox.enable = true;
+
+    # TODO: Remove once Bitwarden updates
+    nixpkgs.config.permittedInsecurePackages = ["electron-39.8.10"];
+    imports = [inputs.self.modules.nixos.bitwarden-overlay];
 
     environment.systemPackages = with pkgs; [
       kitty

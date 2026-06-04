@@ -1,12 +1,5 @@
 {
-  flake.modules.nixos.gaming = {
-    pkgs,
-    inputs,
-    ...
-  }: {
-    # TODO: Remove the overlay once openldap is fixed upstream
-    imports = [inputs.self.modules.nixos.openldap];
-
+  flake.modules.nixos.gaming = {pkgs, ...}: {
     # Game mode
     programs.gamemode.enable = true;
 
