@@ -64,6 +64,7 @@
           window_padding_width = 20;
           enable_audio_bell = "no";
           window_alert_on_bell = "no";
+          auto_reload_config = -1;
         };
         keybindings = {
           "ctrl+shift+p>p" = "change_font_size all 18.0";
