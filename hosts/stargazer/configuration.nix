@@ -16,7 +16,8 @@
       "productivity"
       "development"
       "gemini"
-      "hyprland"
+      # "hyprland"
+      "niri"
       "stylix"
       "gaming"
       "obs"
@@ -75,44 +76,44 @@
     # Flatpak
     services.flatpak.enable = true;
 
-    home-manager.users.siesta = {
-      host.monitors = [
-        {
-          name = "HDMI-A-1";
-          width = 3840;
-          height = 2160;
-          refresh = 60;
-          x = -1920;
-          scale = 2;
-        }
-        {
-          name = "DP-1";
-          width = 2560;
-          height = 1440;
-          refresh = 144;
-          scale = 1;
-        }
-      ];
-      wayland.windowManager.hyprland = {
-        settings = {
-          workspace = builtins.concatLists (builtins.genList (
-              i: let
-                wleft = 2 * i + 1;
-                wright = 2 * i + 2;
-              in [
-                "${toString wleft}, monitor:HDMI-A-1"
-                "${toString wright}, monitor:DP-1"
-              ]
-            )
-            5);
-          exec-once = [
-            "uwsm app -- ckb-next --background"
-            "uwsm app -- solaar --window hide"
-            "uwsm app -- steam -silent"
-          ];
-        };
-      };
-    };
+    # home-manager.users.siesta = {
+    # host.monitors = [
+    #   {
+    #     name = "HDMI-A-1";
+    #     width = 3840;
+    #     height = 2160;
+    #     refresh = 60;
+    #     x = -1920;
+    #     scale = 2;
+    #   }
+    #   {
+    #     name = "DP-1";
+    #     width = 2560;
+    #     height = 1440;
+    #     refresh = 144;
+    #     scale = 1;
+    #   }
+    # ];
+    # wayland.windowManager.hyprland = {
+    #   settings = {
+    #     workspace = builtins.concatLists (builtins.genList (
+    #         i: let
+    #           wleft = 2 * i + 1;
+    #           wright = 2 * i + 2;
+    #         in [
+    #           "${toString wleft}, monitor:HDMI-A-1"
+    #           "${toString wright}, monitor:DP-1"
+    #         ]
+    #       )
+    #       5);
+    #     exec-once = [
+    #       "uwsm app -- ckb-next --background"
+    #       "uwsm app -- solaar --window hide"
+    #       "uwsm app -- steam -silent"
+    #     ];
+    #   };
+    # };
+    # };
 
     system.stateVersion = "24.05"; # Do not change this
   };
