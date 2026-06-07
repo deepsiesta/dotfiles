@@ -174,7 +174,7 @@
             vertical-pad = 12;
             line-height = 28;
             font = "Noto Sans:size=12";
-            launch-prefix = "uwsm-app --";
+            # launch-prefix = "uwsm-app --";
           };
           colors = lib.mkForce {
             background = "000000cc";
