@@ -7,21 +7,21 @@
 
     security.pam.services.hyprlock = {};
 
-    services.displayManager.defaultSession = "hyprland-uwsm";
-
     environment.systemPackages = with pkgs; [
       alacritty
       fuzzel
       swaylock
       mako
-      swayidle
       xwayland-satellite
     ];
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
-  flake.modules.homeManager.hyprland = {...}: {
+  flake.modules.homeManager.niri = {config, ...}: {
+    # TODO: Migrate out of mkOutOfStoreSymlink before merging branch
+    xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/modules/niri/config.kdl";
+
     programs.hyprlock = {
       enable = true;
       settings = {
