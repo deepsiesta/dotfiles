@@ -16,7 +16,6 @@
   flake.modules.homeManager.gui-base = {
     lib,
     pkgs,
-    config,
     ...
   }: {
     options.host.waybar.type = lib.mkOption {
@@ -35,10 +34,7 @@
             height = 32;
             modules-left = ["hyprland/window"];
             modules-center = ["hyprland/workspaces"];
-            modules-right =
-              ["tray" "wireplumber"]
-              ++ (lib.optionals (config.host.waybar.type == "laptop") ["battery"])
-              ++ ["clock"];
+            modules-right = ["tray" "wireplumber" "battery" "clock"];
 
             "hyprland/window" = {
               format = "{}";
