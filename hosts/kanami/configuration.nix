@@ -20,7 +20,7 @@
       "hyprland"
       "stylix"
       "gaming"
-      # "nvidia"
+      "nvidia"
       "neovim"
       "starship"
       "tmux"
@@ -67,8 +67,8 @@
     services.flatpak.enable = true;
 
     # Old GPUs cannot use the open kernel module
-    # host.nvidia.legacy = true;
-    # nixpkgs.config.nvidia.acceptLicense = true;
+    host.nvidia.legacy = true;
+    nixpkgs.config.nvidia.acceptLicense = true;
 
     home-manager.users.siesta = {
       host.monitors = [
