@@ -1,8 +1,5 @@
 {
-  flake.modules.nixos.stargazer = {
-    inputs,
-    ...
-  }: let
+  flake.modules.nixos.stargazer = {inputs, ...}: let
     modules = [
       "common"
       "audio"
