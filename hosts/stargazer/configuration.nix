@@ -1,6 +1,5 @@
 {
   flake.modules.nixos.stargazer = {
-    pkgs,
     inputs,
     ...
   }: let

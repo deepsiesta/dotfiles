@@ -16,7 +16,6 @@
       "productivity"
       "development"
       "gemini"
-      "cursor"
       "hyprland"
       "stylix"
       "gaming"
@@ -36,7 +35,7 @@
     ];
 
     # Kernel
-    boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     hardware.cpu.amd.updateMicrocode = true;
 
     # Enable firmware updates
@@ -45,6 +44,9 @@
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+
+    # Encryption
+    boot.initrd.luks.devices."luks-db6fa79c-115f-4e8f-86e7-fae68ab2ef71".device = "/dev/disk/by-uuid/db6fa79c-115f-4e8f-86e7-fae68ab2ef71";
 
     # Enable flakes
     nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -87,6 +89,6 @@
       };
     };
 
-    system.stateVersion = "24.05"; # Do not change this
+    system.stateVersion = "26.05"; # Do not change this
   };
 }
