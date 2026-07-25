@@ -41,12 +41,23 @@
     # Enable firmware updates
     services.fwupd.enable = true;
 
-    # Bootloader.
+    # Bootloader
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Encryption
-    boot.initrd.luks.devices."luks-db6fa79c-115f-4e8f-86e7-fae68ab2ef71".device = "/dev/disk/by-uuid/db6fa79c-115f-4e8f-86e7-fae68ab2ef71";
+    boot.initrd.luks.devices."luks-676832ae-1d58-4570-897f-0175565da880" = {
+      device = "/dev/disk/by-uuid/676832ae-1d58-4570-897f-0175565da880";
+      crypttabExtraOpts = ["fido2-device=auto"];
+    };
+
+    # Swapfile
+    swapDevices = [
+      {
+        device = "/swap/swapfile";
+        size = 34 * 1024;
+      }
+    ];
 
     # Enable flakes
     nix.settings.experimental-features = ["nix-command" "flakes"];

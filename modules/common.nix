@@ -76,6 +76,9 @@
       btop
     ];
 
+    # Home-Manager auto-backups for file conflicts
+    home-manager.backupFileExtension = "backup";
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.siesta = {
       isNormalUser = true;
