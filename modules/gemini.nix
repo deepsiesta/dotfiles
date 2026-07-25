@@ -1,13 +1,13 @@
 {
   flake.modules.nixos.gemini = {
-    pkgs,
     inputs,
+    pkgs,
     ...
-  }: {
-    nixpkgs.overlays = [inputs.llm-agents.overlays.default];
-
-    environment.systemPackages = with pkgs; [
-      llm-agents.antigravity-cli
+  }: let
+    inherit (pkgs.stdenv.hostPlatform) system;
+  in {
+    environment.systemPackages = [
+      inputs.llm-agents.packages.${system}.antigravity-cli
     ];
   };
 }

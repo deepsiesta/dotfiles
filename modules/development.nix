@@ -3,12 +3,12 @@
     inputs,
     pkgs,
     ...
-  }: {
-    nixpkgs.overlays = [inputs.llm-agents.overlays.default];
-
-    environment.systemPackages = with pkgs; [
-      vscodium-fhs
-      llm-agents.opencode
+  }: let
+    inherit (pkgs.stdenv.hostPlatform) system;
+  in {
+    environment.systemPackages = [
+      pkgs.vscodium-fhs
+      inputs.llm-agents.packages.${system}.opencode
     ];
   };
 }

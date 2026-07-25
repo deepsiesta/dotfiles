@@ -50,7 +50,7 @@
         // },
         {
             "type": "packages",
-            "format": "{} (nix)",
+            // "format": "{} (nix)",
             "key": " ",
             "keyColor": "36"
         },

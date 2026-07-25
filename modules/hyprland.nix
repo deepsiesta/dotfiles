@@ -89,7 +89,7 @@
               range = 5;
               render_power = 3;
               color = lib.mkForce "$col_active";
-              color_inactive = false;
+              color_inactive = "0x00000000";
             };
           };
           input = {

@@ -6,7 +6,7 @@
 
     environment.systemPackages = with pkgs; [
       (btop.override {cudaSupport = true;})
-      ollama-cuda
+      # ollama-cuda
     ];
   };
 }
