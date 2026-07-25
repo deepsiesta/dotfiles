@@ -16,7 +16,8 @@
       "productivity"
       "development"
       "gemini"
-      "hyprland"
+      # "hyprland"
+      "niri"
       "stylix"
       "gaming"
       "slack"
@@ -79,16 +80,15 @@
     services.flatpak.enable = true;
 
     home-manager.users.siesta = {
-      host.waybar.type = "laptop";
-      host.monitors = [
-        {
-          name = "eDP-1";
-          width = 2880;
-          height = 1920;
-          refresh = 120;
-          scale = 2;
-        }
-      ];
+      # host.monitors = [
+      #   {
+      #     name = "eDP-1";
+      #     width = 2880;
+      #     height = 1920;
+      #     refresh = 120;
+      #     scale = 2;
+      #   }
+      # ];
       host.terminal.quickAccessLines = 20;
       wayland.windowManager.hyprland = {
         settings = {
