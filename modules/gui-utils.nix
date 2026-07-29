@@ -1,8 +1,5 @@
 {
-  flake.modules.nixos.gui-utils = {
-    pkgs,
-    ...
-  }: {
+  flake.modules.nixos.gui-utils = {pkgs, ...}: {
     programs.firefox.enable = true;
 
     environment.systemPackages = with pkgs; [
