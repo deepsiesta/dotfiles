@@ -6,14 +6,7 @@
 
     environment.systemPackages = with pkgs; [
       (btop.override {cudaSupport = true;})
-      (ollama-cuda.overrideAttrs (old: {
-        buildInputs = (old.buildInputs or []) ++ [cudaPackages.cudatoolkit];
-        cmakeFlags =
-          (old.cmakeFlags or [])
-          ++ [
-            "-DCUDAToolkit_ROOT=${cudaPackages.cudatoolkit}"
-          ];
-      }))
+      ollama-cuda
     ];
   };
 }
