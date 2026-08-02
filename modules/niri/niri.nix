@@ -8,10 +8,9 @@
     security.pam.services.hyprlock = {};
 
     environment.systemPackages = with pkgs; [
-      alacritty
       fuzzel
-      swaylock
-      mako
+      # mako
+      networkmanagerapplet
       xwayland-satellite
       jq
     ];
