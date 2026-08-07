@@ -176,8 +176,8 @@ layout {
 }
 
 spawn-at-startup "waybar"
-spawn-at-startup "nm-applet --indicator"
-spawn-at-startup "discord --start-minimized"
+spawn-at-startup "nm-applet" "--indicator"
+spawn-at-startup "discord" "--start-minimized"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -193,6 +193,11 @@ screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-%H%M%S_screenshot.png"
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
 
+gestures {
+    hot-corners {
+        off
+    }
+}
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://niri-wm.github.io/niri/Configuration:-Animations
