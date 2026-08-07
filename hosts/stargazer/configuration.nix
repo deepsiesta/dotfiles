@@ -89,9 +89,9 @@
       xdg.configFile."niri/extra.kdl".text =
         # KDL
         ''
-          spawn-at-startup "ckb-next --background"
-          spawn-at-startup "solaar --window hide"
-          spawn-at-startup "steam -silent"
+          spawn-at-startup "ckb-next" "--background"
+          spawn-at-startup "solaar" "--window" "hide"
+          spawn-sh-at-startup "sleep 1 && steam -silent"
         '';
     };
 
