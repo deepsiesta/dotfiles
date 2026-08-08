@@ -19,8 +19,7 @@ NixOS flake-based dotfiles managed with [flake-parts](https://github.com/hercule
 │   └── ...
 ├── modules                # Shared NixOS & home-manager modules
 │   ├── common.nix         # Base system + user config
-│   ├── hyprland.nix       # Compositor
-│   └── ...                # Etc
+│   └── ...
 ├── lib                    # Helper functions
 │   └── ...
 └── overlays
