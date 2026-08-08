@@ -17,7 +17,7 @@
       "productivity"
       "development"
       "gemini"
-      "hyprland"
+      "niri"
       "stylix"
       "gaming"
       "nvidia"
@@ -71,22 +71,6 @@
     nixpkgs.config.nvidia.acceptLicense = true;
 
     home-manager.users.siesta = {
-      host.monitors = [
-        {
-          name = "DP-1";
-          width = 2560;
-          height = 1440;
-          refresh = 144;
-          scale = 1;
-        }
-      ];
-      wayland.windowManager.hyprland = {
-        settings = {
-          input = {
-            numlock_by_default = lib.mkForce false;
-          };
-        };
-      };
     };
 
     system.stateVersion = "24.05"; # Do not change this

@@ -40,7 +40,7 @@
           stashed = "≡";
         };
         git_state = {
-          format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+          format = "([$state( $progress_current/$progress_total)]($style)) ";
           style = "bright-black";
         };
         cmd_duration = {

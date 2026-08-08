@@ -46,7 +46,7 @@
         edge top
         hide_on_focus_loss yes
         kitty_override window_padding_width 20
-        background_opacity 0.8
+        background_opacity 0.7
       '';
 
       programs.kitty = {
@@ -57,6 +57,7 @@
           enable_audio_bell = "no";
           window_alert_on_bell = "no";
           auto_reload_config = -1;
+          background_blur = 1;
         };
         keybindings = {
           "ctrl+shift+p>p" = "change_font_size all 18.0";
