@@ -9,7 +9,6 @@
 
     environment.systemPackages = with pkgs; [
       fuzzel
-      # mako
       networkmanagerapplet
       xwayland-satellite
       jq
@@ -19,7 +18,6 @@
   };
 
   flake.modules.homeManager.niri = {config, ...}: {
-    # TODO: Migrate out of mkOutOfStoreSymlink before merging branch
     xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/modules/niri/config.kdl";
 
     programs.hyprlock = {
