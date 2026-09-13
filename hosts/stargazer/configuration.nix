@@ -88,7 +88,7 @@
         # KDL
         ''
           spawn-at-startup "ckb-next" "--background"
-          spawn-at-startup "solaar" "--window" "hide"
+          spawn-at-startup "solaar" "--battery-icons" "symbolic" "--window" "hide"
           spawn-sh-at-startup "sleep 1 && steam -silent"
         '';
     };
