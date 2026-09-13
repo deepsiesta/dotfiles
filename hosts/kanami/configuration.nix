@@ -35,7 +35,8 @@
     ];
 
     # Kernel
-    # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    # TODO move to LTS for the next release
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     hardware.cpu.intel.updateMicrocode = true;
 
     # Bootloader.
