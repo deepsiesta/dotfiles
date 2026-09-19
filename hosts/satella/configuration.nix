@@ -14,7 +14,6 @@
       "multimedia"
       "productivity"
       "development"
-      "gemini"
       "niri"
       "noctalia"
       "stylix"
