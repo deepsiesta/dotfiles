@@ -1,17 +1,7 @@
 [bar.default]
 background_opacity = 0.80
 center = [ "workspaces" ]
-end = [
-    "tray",
-    "notifications",
-    "clipboard",
-    "network",
-    "bluetooth",
-    "volume",
-    "brightness",
-    "battery",
-    "clock",
-]
+end = [ "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "clock" ]
 font_weight = 700
 margin_ends = 0
 radius = 0
@@ -28,6 +18,7 @@ media = false
 
 [shell]
 corner_radius_scale = 0.0
+polkit_agent = true
 settings_show_advanced = false
 
     [shell.panel]
@@ -52,9 +43,6 @@ max_length = 800
 
 [widget.network]
 show_label = false
-
-[widget.spacer]
-type = "spacer"
 
 [widget.workspaces]
 style = "minimal"
