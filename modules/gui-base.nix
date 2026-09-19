@@ -8,6 +8,21 @@
     environment.systemPackages = with pkgs; [
       wl-clipboard
     ];
+
+    services.displayManager.noctalia-greeter = {
+      enable = true;
+      settings = {
+        cursor.size = 24;
+        keyboard = {
+          layout = "us";
+          variant = "altgr-intl";
+        };
+      };
+      cursorTheme = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+      };
+    };
   };
 
   flake.modules.homeManager.gui-base = {

@@ -4,7 +4,6 @@
       "common"
       "audio"
       "fonts"
-      "sddm"
       "gui-utils"
       "gui-base"
       "thunar"
