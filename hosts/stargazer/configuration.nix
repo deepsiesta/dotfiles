@@ -18,6 +18,7 @@
       "podman"
       "nvidia"
       "cuda"
+      "forge"
       "neovim"
       "starship"
       "tmux"

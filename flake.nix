@@ -62,6 +62,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stable-diffusion-webui-nix = {
+      url = "github:Janrupf/stable-diffusion-webui-nix/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # comfyui-nix.url = "github:utensils/comfyui-nix";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
