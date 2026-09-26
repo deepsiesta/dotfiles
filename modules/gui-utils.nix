@@ -12,6 +12,8 @@
       qbittorrent
       insync
       ffmpegthumbnailer
+      kdePackages.okular
+      obsidian
     ];
   };
 

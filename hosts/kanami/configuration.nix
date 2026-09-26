@@ -13,7 +13,6 @@
       "gui-base"
       "thunar"
       "multimedia"
-      "productivity"
       "development"
       "niri"
       "noctalia"
