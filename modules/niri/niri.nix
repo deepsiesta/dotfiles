@@ -2,6 +2,7 @@
   flake.modules.nixos.niri = {pkgs, ...}: {
     programs.niri.enable = true;
     services.gnome.gnome-keyring.enable = true;
+    services.accounts-daemon.enable = true;
 
     environment.systemPackages = with pkgs; [
       xwayland-satellite
