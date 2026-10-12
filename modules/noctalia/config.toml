@@ -1,5 +1,8 @@
+[audio]
+enable_sounds = false
+
 [bar.default]
-background_opacity = 0.80
+background_opacity = 0.7
 center = [ "workspaces" ]
 end = [ "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "clock" ]
 font_weight = 700
@@ -9,12 +12,22 @@ shadow = false
 start = [ "active_window" ]
 thickness = 32
 
+[dock]
+background_opacity = 0.7
+
 [lockscreen_widgets]
 enabled = false
+schema_version = 2
 
-[osd.kinds]
-lock_keys = false
-media = false
+[notification]
+background_opacity = 0.7
+
+[osd]
+background_opacity = 0.7
+
+    [osd.kinds]
+    lock_keys = false
+    media = false
 
 [shell]
 corner_radius_scale = 0.0
@@ -25,10 +38,12 @@ settings_show_advanced = false
     control_center_placement = "floating"
     control_center_position = "top_right"
     open_near_click_control_center = true
+    transparency_mode = "soft"
 
 [theme]
 builtin = "Tokyo-Night"
 mode = "dark"
+pure_black_dark = true
 source = "builtin"
 
 [widget.active_window]
