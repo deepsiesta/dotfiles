@@ -11,7 +11,6 @@
       "development"
       "niri"
       "noctalia"
-      "stylix"
       "gaming"
       "obs"
       "aagl"

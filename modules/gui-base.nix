@@ -25,7 +25,11 @@
     };
   };
 
-  flake.modules.homeManager.gui-base = {pkgs, ...}: {
+  flake.modules.homeManager.gui-base = {
+    config,
+    pkgs,
+    ...
+  }: {
     services.xembed-sni-proxy.enable = true;
 
     dconf.settings = {
@@ -34,11 +38,28 @@
       };
     };
 
+    home.pointerCursor = {
+      enable = true;
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+    };
+
     gtk = {
       enable = true;
+      theme = {
+        package = pkgs.tokyonight-gtk-theme;
+        name = "Tokyonight-Dark";
+      };
+      gtk4.theme = config.gtk.theme;
       iconTheme = {
         name = "Sweet-Rainbow";
         package = pkgs.sweet-folders;
+      };
+      font = {
+        name = "Noto Sans";
+        size = 12;
       };
     };
 

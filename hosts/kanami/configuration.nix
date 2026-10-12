@@ -16,7 +16,6 @@
       "development"
       "niri"
       "noctalia"
-      "stylix"
       "gaming"
       "nvidia"
       "neovim"

@@ -15,7 +15,6 @@
       "development"
       "niri"
       "noctalia"
-      "stylix"
       "gaming"
       "slack"
       "podman"
