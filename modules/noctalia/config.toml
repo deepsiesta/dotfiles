@@ -46,6 +46,12 @@ mode = "dark"
 pure_black_dark = true
 source = "builtin"
 
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "antigravity", "opencode", "vscode" ]
+    enable_builtin_templates = true
+    enable_community_templates = true
+
 [widget.active_window]
 display = "text_only"
 interactive = false
