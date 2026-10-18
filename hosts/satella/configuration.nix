@@ -14,6 +14,7 @@
       "multimedia"
       "development"
       "antigravity"
+      "claude"
       "niri"
       "noctalia"
       "gaming"
