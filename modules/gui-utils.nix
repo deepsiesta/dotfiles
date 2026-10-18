@@ -53,7 +53,7 @@
 
       programs.kitty = {
         enable = true;
-        themeFile = "Modus_Vivendi";
+        extraConfig = "include themes/noctalia.conf";
         font = {
           name = "FiraCode Nerd Font";
           size = 12;
