@@ -67,6 +67,12 @@
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+    # Disable AMD Vari-Bright (ABM)
+    # ABM messes with color gamma curve on the 2.8K display
+    boot.kernelParams = [
+      "amdgpu.abmlevel=0"
+    ];
+
     # Brightness control
     environment.systemPackages = [pkgs.brightnessctl];
 
