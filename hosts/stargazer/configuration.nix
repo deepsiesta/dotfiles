@@ -9,6 +9,7 @@
       "thunar"
       "multimedia"
       "development"
+      "antigravity"
       "niri"
       "noctalia"
       "gaming"
