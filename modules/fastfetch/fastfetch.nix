@@ -121,17 +121,17 @@
           "break"
           {
             type = "command";
-            key = "󰔠 ";
-            text = systemAgeCmd;
-          }
-          {
-            type = "command";
             key = "󰚰 ";
             text =
               # bash
               ''
                 echo "Generation $(readlink /nix/var/nix/profiles/system | cut -d'-' -f2)"
               '';
+          }
+          {
+            type = "command";
+            key = "󰔠 ";
+            text = systemAgeCmd;
           }
           "break"
           "colors"
