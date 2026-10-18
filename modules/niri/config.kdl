@@ -124,7 +124,7 @@ input {
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
-    gaps 8
+    gaps 6
     background-color "transparent"
     center-focused-column "never"
 
@@ -170,8 +170,9 @@ layout {
         inactive-color "#00000000"
     }
     struts {
-        left -4
-        right -4
+        top -2
+        left -2
+        right -2
     }
 }
 

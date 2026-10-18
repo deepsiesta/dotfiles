@@ -34,6 +34,9 @@ corner_radius_scale = 0.0
 polkit_agent = true
 settings_show_advanced = false
 
+    [shell.animation]
+    speed = 1.5
+
     [shell.panel]
     control_center_placement = "floating"
     control_center_position = "top_right"
@@ -42,9 +45,16 @@ settings_show_advanced = false
 
 [theme]
 builtin = "Tokyo-Night"
+community_palette = "Seoul256 Hard"
 mode = "dark"
 pure_black_dark = true
-source = "builtin"
+source = "community"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "antigravity", "opencode", "vscode" ]
+    enable_builtin_templates = true
+    enable_community_templates = true
 
 [widget.active_window]
 display = "text_only"
