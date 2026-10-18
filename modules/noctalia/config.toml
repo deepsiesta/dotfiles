@@ -51,8 +51,8 @@ pure_black_dark = true
 source = "community"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt" ]
-    community_ids = [ "antigravity", "opencode", "vscode" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "qt" ]
+    community_ids = [ "opencode" ]
     enable_builtin_templates = true
     enable_community_templates = true
 

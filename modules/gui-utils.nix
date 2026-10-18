@@ -53,13 +53,14 @@
 
       programs.kitty = {
         enable = true;
-        extraConfig = "include themes/noctalia.conf";
+        themeFile = "tokyo_night_night";
         font = {
           name = "FiraCode Nerd Font";
           size = 12;
         };
         settings = {
           shell = "nu";
+          background = "#000000";
           background_opacity = "0.8";
           window_padding_width = 20;
           enable_audio_bell = "no";
