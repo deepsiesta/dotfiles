@@ -46,7 +46,7 @@
           set -g status-right-style "fg=cyan"
           set -g window-status-format "[ ${window_status_format} ]"
           set -g window-status-current-format "[ ${window_status_format}#{?window_zoomed_flag,${zoomed_icon},} ]"
-          set -g window-status-current-style "fg=yellow,bold"
+          set -g window-status-current-style "fg=brightyellow,bold"
           set -g window-status-separator "  "
         '';
     };
