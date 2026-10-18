@@ -49,10 +49,16 @@
     gtk = {
       enable = true;
       theme = {
-        package = pkgs.tokyonight-gtk-theme;
-        name = "Tokyonight-Dark";
+        package = pkgs.adw-gtk3;
+        name = "adw-gtk3-dark";
       };
-      gtk4.theme = config.gtk.theme;
+      gtk4.theme = null;
+      gtk3.extraCss = ''
+        @import url("noctalia.css");
+      '';
+      gtk4.extraCss = ''
+        @import url("noctalia.css");
+      '';
       iconTheme = {
         name = "Sweet-Rainbow";
         package = pkgs.sweet-folders;
@@ -69,6 +75,23 @@
 
     qt = {
       enable = true;
+      platformTheme.name = "qtct";
+      qt5ctSettings = {
+        Appearance = {
+          color_scheme_path = "${config.xdg.configHome}/qt5ct/colors/noctalia.conf";
+          custom_palette = true;
+          icon_theme = "Sweet-Rainbow";
+          style = "Fusion";
+        };
+      };
+      qt6ctSettings = {
+        Appearance = {
+          color_scheme_path = "${config.xdg.configHome}/qt6ct/colors/noctalia.conf";
+          custom_palette = true;
+          icon_theme = "Sweet-Rainbow";
+          style = "Fusion";
+        };
+      };
     };
   };
 }
