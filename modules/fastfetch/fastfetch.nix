@@ -24,6 +24,23 @@
         out="$(f $y year)$(f $m month)$(f $day day)"
         echo "''${out:-Today}"
       '';
+    noctaliaThemeCmd =
+      # bash
+      ''
+        awk -F'"' '
+          /^\[/ { in_theme = ($0 == "[theme]") }
+          in_theme && /^source *=/ { src = $2 }
+          in_theme && /^builtin *=/ { b = $2 }
+          in_theme && /^community_palette *=/ { c = $2 }
+          in_theme && /^custom_palette *=/ { u = $2 }
+          END {
+            if (src == "community" && c != "") print c
+            else if (src == "custom" && u != "") print u
+            else if (src == "wallpaper") print "Wallpaper"
+            else if (b != "") print b
+          }
+        ' ~/.config/noctalia/config.toml ~/.local/state/noctalia/settings.toml 2>/dev/null
+      '';
   in {
     programs.fastfetch = {
       enable = true;
@@ -83,11 +100,7 @@
             type = "command";
             key = " ";
             keyColor = "36";
-            text =
-              # bash
-              ''
-                awk -F'"' '/^(builtin|community_palette|custom_palette) =/ {print $2; exit}' ~/.config/noctalia/config.toml
-              '';
+            text = noctaliaThemeCmd;
           }
           {
             type = "terminal";
