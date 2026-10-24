@@ -2,6 +2,7 @@
   flake.modules.homeManager.nushell = _: {
     programs.nushell = {
       enable = true;
+      loadSessionVariables = true;
       configFile.text =
         # nu
         ''
