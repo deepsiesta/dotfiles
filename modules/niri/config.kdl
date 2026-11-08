@@ -234,14 +234,14 @@ animations {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
 window-rule {
     geometry-corner-radius 0
+}
+
+window-rule {
+    match is-floating=false
+    tiled-state true
+    clip-to-geometry true
 }
 
 window-rule {
