@@ -1,14 +1,8 @@
 {
-  flake.modules.nixos.development = {
-    inputs,
-    pkgs,
-    ...
-  }: let
-    inherit (pkgs.stdenv.hostPlatform) system;
-  in {
+  flake.modules.nixos.development = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.vscodium-fhs
-      inputs.llm-agents.packages.${system}.opencode
+      pkgs.opencode
     ];
   };
 }
