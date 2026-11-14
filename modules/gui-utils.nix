@@ -10,7 +10,7 @@
       discord
       gimp3
       qbittorrent
-      # insync # TODO uncomment once build is fixed
+      insync
       ffmpegthumbnailer
       kdePackages.okular
       obsidian
