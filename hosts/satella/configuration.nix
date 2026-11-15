@@ -85,14 +85,6 @@
 
     home-manager.users.siesta = {
       host.terminal.quickAccessLines = 20;
-      wayland.windowManager.hyprland = {
-        settings = {
-          bindel = [
-            " , XF86MonBrightnessUp, exec, brightnessctl set 10%+"
-            " , XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-          ];
-        };
-      };
     };
 
     system.stateVersion = "26.05"; # Do not change this
